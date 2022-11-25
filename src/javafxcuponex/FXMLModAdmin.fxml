@@ -6,6 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModAdminController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="370.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxcuponex.FXMLModAdminController">
+   <children>
+      <Label layoutX="69.0" layoutY="81.0" text="Nombre :" />
+      <Label layoutX="283.0" layoutY="81.0" text="Apellido Paterno :" />
+      <Label layoutX="69.0" layoutY="158.0" text="Apellido Materno :" />
+      <Label layoutX="331.0" layoutY="158.0" text="Correo :" />
+      <Label layoutX="66.0" layoutY="224.0" text="Contraseña :" />
+      <TextField fx:id="tfNombre" layoutX="129.0" layoutY="77.0" prefHeight="25.0" prefWidth="127.0" />
+      <TextField fx:id="tfApellidoP" layoutX="385.0" layoutY="77.0" />
+      <TextField fx:id="tfApellidoM" layoutX="173.0" layoutY="154.0" prefHeight="25.0" prefWidth="127.0" />
+      <TextField fx:id="tfCorreo" layoutX="385.0" layoutY="154.0" />
+      <PasswordField fx:id="tfPassword" layoutX="135.0" layoutY="220.0" prefHeight="25.0" prefWidth="127.0" />
+      <Button layoutX="460.0" layoutY="233.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
+      <Button layoutX="321.0" layoutY="233.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
+   </children>
 </AnchorPane>
