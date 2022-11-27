@@ -7,7 +7,13 @@ package javafxcuponex;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafxcuponex.util.Utilidades;
 
 /**
  * FXML Controller class
@@ -16,6 +22,11 @@ import javafx.fxml.Initializable;
  */
 public class FXMLInicioController implements Initializable {
 
+    @FXML
+    private TextField tfNumPersonal;
+    @FXML
+    private PasswordField pfPassword;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +34,21 @@ public class FXMLInicioController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void clickIniciarSesion(ActionEvent event) {
+        String user = tfNumPersonal.getText();
+        String password = pfPassword.getText();
+        
+        if(!user.isEmpty() && !password.isEmpty()){
+            verificarInicioSesion(user, password);
+        }else{
+            Utilidades.mostrarAlertaSimple("Campos requeridos...", "Es necesario ingresar el ", Alert.AlertType.WARNING);
+        }
+    }
+    
+    private void verificarInicioSesion(String user, String password){
+      
+    }
     
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModAdminController">
+   <children>
+      <Label layoutX="221.0" layoutY="14.0" text="Modulo Administrador">
+         <font>
+            <Font name="Bell MT" size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbUsuarios" layoutX="1.0" layoutY="79.0" prefHeight="230.0" prefWidth="600.0">
+        <columns>
+          <TableColumn prefWidth="125.0" text="Nombre" />
+          <TableColumn prefWidth="128.0" text="Apellido Paterno" />
+            <TableColumn prefWidth="136.0" text="Apellido Materno" />
+            <TableColumn prefWidth="210.0" text="Correo" />
+        </columns>
+      </TableView>
+      <Button layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#clickEditarUsuario" text="Editar">
+         <font>
+            <Font name="Bell MT" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="135.0" layoutY="344.0" mnemonicParsing="false" onAction="#clickEliminarUsuario" text="Eliminar">
+         <font>
+            <Font name="Bell MT" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="506.0" layoutY="344.0" mnemonicParsing="false" onAction="#clickAgregarUsuario" text="Agregar">
+         <font>
+            <Font name="Bell MT" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

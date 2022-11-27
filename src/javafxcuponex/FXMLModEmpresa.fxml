@@ -1,11 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModEmpresaController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="630.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxcuponex.FXMLModEmpresaController">
+   <children>
+      <Label layoutX="256.0" layoutY="14.0" text="Registro de Empresas">
+         <font>
+            <Font name="Bell MT" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNombre" layoutX="93.0" layoutY="76.0" prefHeight="25.0" prefWidth="137.0" />
+      <Label layoutX="31.0" layoutY="80.0" text="Nombre">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="80.0" text="Nombre Comercial">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="134.0" text="Nombre Representante Legal">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="267.0" prefHeight="17.0" prefWidth="15.0" text="Label" />
+      <Label layoutX="370.0" layoutY="134.0" text="Email">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNombreComercial" layoutX="387.0" layoutY="76.0" prefHeight="25.0" prefWidth="178.0" />
+      <TextField fx:id="tfNombreRL" layoutX="209.0" layoutY="130.0" prefHeight="25.0" prefWidth="146.0" />
+      <TextField fx:id="tfEmail" layoutX="413.0" layoutY="130.0" prefHeight="25.0" prefWidth="161.0" />
+      <Label layoutX="31.0" layoutY="192.0" text="Direccion (Calle y numero)">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfDireccion" layoutX="196.0" layoutY="188.0" prefHeight="25.0" prefWidth="161.0" />
+      <Label layoutX="373.0" layoutY="192.0" text="Codigo Postal">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfCodigoP" layoutX="461.0" layoutY="188.0" prefHeight="25.0" prefWidth="137.0" />
+      <Label layoutX="32.0" layoutY="240.0" text="Ciudad">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfCiudad" layoutX="87.0" layoutY="236.0" />
+      <Label layoutX="265.0" layoutY="240.0" text="Telefono">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfTelefono" layoutX="332.0" layoutY="236.0" />
+      <Label layoutX="31.0" layoutY="289.0" text="Pagina Web">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfPaginaW" layoutX="116.0" layoutY="286.0" prefHeight="25.0" prefWidth="187.0" />
+      <Label layoutX="356.0" layoutY="290.0" text="RFC">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfRfc" layoutX="402.0" layoutY="285.0" />
+      <Button layoutX="530.0" layoutY="342.0" mnemonicParsing="false" onAction="#clickAgregar" text="Agregar">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="342.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

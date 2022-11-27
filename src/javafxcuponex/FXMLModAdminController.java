@@ -7,7 +7,11 @@ package javafxcuponex;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -16,6 +20,17 @@ import javafx.fxml.Initializable;
  */
 public class FXMLModAdminController implements Initializable {
 
+    @FXML
+    private TextField tfNombre;
+    @FXML
+    private TextField tfApellidoP;
+    @FXML
+    private TextField tfApellidoM;
+    @FXML
+    private TextField tfCorreo;
+    @FXML
+    private PasswordField tfPassword;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +38,13 @@ public class FXMLModAdminController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void clickGuardar(ActionEvent event) {
+    }
+
+    @FXML
+    private void clickCancelar(ActionEvent event) {
+    }
     
 }
