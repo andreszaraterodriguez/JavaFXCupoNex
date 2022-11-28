@@ -7,15 +7,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="796.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxcuponex.FXMLAdminModEmpresaController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModEmpresaController">
    <children>
       <Label layoutX="332.0" layoutY="14.0" text="Modulo Empresas">
          <font>
             <Font name="Bell MT" size="17.0" />
          </font>
       </Label>
-      <TableView layoutX="3.0" layoutY="100.0" prefHeight="200.0" prefWidth="785.0">
+      <TableView fx:id="tbEmpresas" layoutX="3.0" layoutY="100.0" prefHeight="200.0" prefWidth="785.0">
         <columns>
           <TableColumn prefWidth="94.0" text="Nombre" />
           <TableColumn prefWidth="109.0" text="Nombre C" />
