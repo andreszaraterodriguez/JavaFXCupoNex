@@ -1,19 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package javafxcuponex;
 
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafxcuponex.modelo.ConsumirServiciosWeb;
+import javafxcuponex.pojos.RespuestaLogin;
+import javafxcuponex.util.Constantes;
 import javafxcuponex.util.Utilidades;
+
 
 /**
  * FXML Controller class
@@ -48,7 +54,39 @@ public class FXMLInicioController implements Initializable {
     }
     
     private void verificarInicioSesion(String user, String password){
-      
+      try{
+          String url = Constantes.URL_BASE + "acceso/escritorio";
+          String parametros = "noPersonal="+user+"&password="+password;
+          String resultado = ConsumirServiciosWeb.consumirServiciosPOST(url, parametros);
+          
+          Gson gson = new Gson();
+          RespuestaLogin respuesta = gson.fromJson(resultado, RespuestaLogin.class);
+          if(!respuesta.getError()){
+              Utilidades.mostrarAlertaSimple("Usuario verificado...", "Bienbenido"+ respuesta.getNombre()+"al sistema", Alert.AlertType.INFORMATION);
+          }else{
+              Utilidades.mostrarAlertaSimple("usuario incorrecto...", respuesta.getMensaje(), Alert.AlertType.ERROR);
+          }
+          
+          
+      }catch (Exception e){
+          Utilidades.mostrarAlertaSimple("Error de conexion", e.getMessage(), Alert.AlertType.ERROR);
+      }
     }
+    
+    private void irPantallaPrincipal(){
+        try{
+            Parent vistaPrincipal = FXMLLoader.load(getClass().getResource("FXMLPrincipal.fxml"));
+            Scene escenaPrincipal = new Scene(vistaPrincipal);
+           Stage escenarioBase = (Stage) tfNumPersonal.getScene().getWindow();
+           escenarioBase.setScene(escenaPrincipal);
+           escenarioBase.show();
+        }catch (IOException ex){
+             Utilidades.mostrarAlertaSimple("Error...", "Error al mostrar la pantalla principal...", Alert.AlertType.NONE);
+        }
+    }
+    
+    
+    
+    
     
 }

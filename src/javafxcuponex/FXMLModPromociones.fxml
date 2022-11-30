@@ -64,10 +64,5 @@
          </font>
       </Label>
       <TextField fx:id="tfCategoria" layoutX="389.0" layoutY="248.0" prefHeight="25.0" prefWidth="155.0" />
-      <Label layoutX="14.0" layoutY="292.0" text="Estatus">
-         <font>
-            <Font name="Bell MT" size="14.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

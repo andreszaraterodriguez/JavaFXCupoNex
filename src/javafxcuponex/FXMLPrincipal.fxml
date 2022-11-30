@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLPrincipalController">
+   <children>
+      <Label layoutX="203.0" layoutY="14.0" text="Administracion CUPONEX">
+         <font>
+            <Font name="Bell MT" size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="224.0" layoutY="89.0" mnemonicParsing="false" onAction="#clickModAdministrador" text="Modulo Administrador">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="238.0" layoutY="145.0" mnemonicParsing="false" onAction="#clickModEmpresas" text="Modulo Empresas">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="236.0" layoutY="200.0" mnemonicParsing="false" onAction="#clickModSucursales" text="Modulo Sucursales">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="229.0" layoutY="259.0" mnemonicParsing="false" onAction="#clickModPromociones" text="Modulo Promociones">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="499.0" layoutY="361.0" mnemonicParsing="false" onAction="#clickCerrarSesion" text="Cerrar Sesion">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
