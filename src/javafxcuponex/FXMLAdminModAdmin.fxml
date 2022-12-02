@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,27 +9,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModAdminController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModAdminController">
    <children>
-      <Label layoutX="221.0" layoutY="14.0" text="Modulo Administrador">
-         <font>
-            <Font name="Bell MT" size="17.0" />
-         </font>
-      </Label>
       <TableView fx:id="tbUsuarios" layoutX="1.0" layoutY="79.0" prefHeight="230.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="125.0" text="Nombre" />
-          <TableColumn prefWidth="128.0" text="Apellido Paterno" />
-            <TableColumn prefWidth="136.0" text="Apellido Materno" />
-            <TableColumn prefWidth="210.0" text="Correo" />
+          <TableColumn fx:id="colNombre" prefWidth="125.0" text="Nombre" />
+          <TableColumn fx:id="colApellidoP" prefWidth="128.0" text="Apellido Paterno" />
+            <TableColumn fx:id="colApellidoM" prefWidth="136.0" text="Apellido Materno" />
+            <TableColumn fx:id="colCorreo" prefWidth="210.0" text="Correo" />
         </columns>
       </TableView>
-      <Button layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#clickEditarUsuario" text="Editar">
+      <Button layoutX="43.0" layoutY="345.0" mnemonicParsing="false" onAction="#clickEditarUsuario" text="Editar">
          <font>
             <Font name="Bell MT" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="135.0" layoutY="344.0" mnemonicParsing="false" onAction="#clickEliminarUsuario" text="Eliminar">
+      <Button layoutX="135.0" layoutY="345.0" mnemonicParsing="false" onAction="#clickEliminarUsuario" text="Eliminar">
          <font>
             <Font name="Bell MT" size="12.0" />
          </font>
@@ -37,5 +34,18 @@
             <Font name="Bell MT" size="12.0" />
          </font>
       </Button>
+      <Label layoutX="216.0" layoutY="14.0" text="Modulo Administrador">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.43333333333333335" endY="1.0" startX="0.2666666666666666" startY="0.719047619047619">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>

@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="630.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxcuponex.FXMLModEmpresaController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModEmpresaController">
    <children>
       <Label layoutX="256.0" layoutY="14.0" text="Registro de Empresas">
          <font>
@@ -52,36 +51,36 @@
          </font>
       </Label>
       <TextField fx:id="tfCodigoP" layoutX="461.0" layoutY="188.0" prefHeight="25.0" prefWidth="137.0" />
-      <Label layoutX="32.0" layoutY="240.0" text="Ciudad">
+      <Label layoutX="31.0" layoutY="290.0" text="Ciudad">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfCiudad" layoutX="87.0" layoutY="236.0" />
-      <Label layoutX="265.0" layoutY="240.0" text="Telefono">
+      <TextField fx:id="tfCiudad" layoutX="101.0" layoutY="286.0" />
+      <Label layoutX="315.0" layoutY="240.0" text="Telefono">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfTelefono" layoutX="332.0" layoutY="236.0" />
-      <Label layoutX="31.0" layoutY="289.0" text="Pagina Web">
+      <TextField fx:id="tfTelefono" layoutX="387.0" layoutY="236.0" prefHeight="25.0" prefWidth="161.0" />
+      <Label layoutX="31.0" layoutY="240.0" text="Pagina Web">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfPaginaW" layoutX="116.0" layoutY="286.0" prefHeight="25.0" prefWidth="187.0" />
-      <Label layoutX="356.0" layoutY="290.0" text="RFC">
+      <TextField fx:id="tfPaginaW" layoutX="107.0" layoutY="236.0" prefHeight="25.0" prefWidth="187.0" />
+      <Label layoutX="319.0" layoutY="290.0" text="RFC">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfRfc" layoutX="402.0" layoutY="285.0" />
-      <Button layoutX="530.0" layoutY="342.0" mnemonicParsing="false" onAction="#clickAgregar" text="Agregar">
+      <TextField fx:id="tfRfc" layoutX="367.0" layoutY="286.0" />
+      <Button layoutX="530.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickAgregar" text="Agregar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="31.0" layoutY="342.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar">
+      <Button layoutX="31.0" layoutY="356.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>

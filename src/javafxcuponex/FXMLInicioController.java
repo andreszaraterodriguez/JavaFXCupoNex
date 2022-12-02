@@ -2,6 +2,7 @@
 package javafxcuponex;
 
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
