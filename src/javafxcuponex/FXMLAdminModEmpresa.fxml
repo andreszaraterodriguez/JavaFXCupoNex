@@ -7,25 +7,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModEmpresaController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="1000.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModEmpresaController">
    <children>
-      <Label layoutX="332.0" layoutY="14.0" text="Modulo Empresas">
+      <Label layoutX="439.0" layoutY="23.0" text="Modulo Empresas">
          <font>
-            <Font name="Bell MT" size="17.0" />
+            <Font name="Bell MT" size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="tbEmpresas" layoutX="3.0" layoutY="100.0" prefHeight="200.0" prefWidth="785.0">
+      <TableView fx:id="tbEmpresas" layoutX="3.0" layoutY="100.0" prefHeight="200.0" prefWidth="1020.0">
         <columns>
-          <TableColumn prefWidth="94.0" text="Nombre" />
-          <TableColumn prefWidth="109.0" text="Nombre C" />
-            <TableColumn prefWidth="152.0" text="Nombre R.L" />
-            <TableColumn prefWidth="150.0" text="Email" />
-            <TableColumn prefWidth="109.0" text="Dereccion" />
-            <TableColumn prefWidth="66.0" text="Codigo Postal" />
-            <TableColumn prefWidth="84.0" text="Ciudad" />
+          <TableColumn fx:id="colNombre" prefWidth="94.0" text="Nombre" />
+          <TableColumn fx:id="colNombreC" prefWidth="109.0" text="Nombre Comercial" />
+            <TableColumn fx:id="colNombreRL" prefWidth="152.0" text="Nombre Rep. Legal" />
+            <TableColumn fx:id="colEmail" prefWidth="150.0" text="Email" />
+            <TableColumn fx:id="colDireccion" prefWidth="109.0" text="Dereccion" />
+            <TableColumn fx:id="colCodigoP" prefWidth="93.0" text="Codigo Postal" />
+            <TableColumn fx:id="colCiudad" prefWidth="90.0" text="Ciudad" />
+            <TableColumn fx:id="colTelefono" prefWidth="75.0" text="Telefono" />
+            <TableColumn fx:id="colPaginaW" prefWidth="75.0" text="Pagina W" />
+            <TableColumn fx:id="colRfc" prefWidth="75.0" text="RFC" />
         </columns>
       </TableView>
-      <Button layoutX="26.0" layoutY="326.0" mnemonicParsing="false" onAction="#clickEditarEmpresa" text="Editar">
+      <Button layoutX="82.0" layoutY="326.0" mnemonicParsing="false" onAction="#clickEditarEmpresa" text="Editar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
@@ -36,12 +39,12 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="140.0" layoutY="326.0" mnemonicParsing="false" onAction="#clickEliminarEmpresa" text="Eliminar">
+      <Button layoutX="206.0" layoutY="326.0" mnemonicParsing="false" onAction="#clickEliminarEmpresa" text="Eliminar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="701.0" layoutY="327.0" mnemonicParsing="false" onAction="#clickAgregarEmpresa" text="Agregar">
+      <Button layoutX="831.0" layoutY="326.0" mnemonicParsing="false" onAction="#clickAgregarEmpresa" text="Agregar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>

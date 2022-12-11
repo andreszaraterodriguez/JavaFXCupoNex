@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModAdminController">
+<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="600.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModAdminController">
    <children>
       <Label layoutX="69.0" layoutY="81.0" text="Nombre :">
          <font>
@@ -25,7 +25,7 @@
          <font>
             <Font name="Bell MT" size="14.0" />
          </font></Label>
-      <Label layoutX="66.0" layoutY="224.0" text="Contraseña :">
+      <Label layoutX="63.0" layoutY="233.0" text="Contraseña :">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font></Label>
@@ -33,12 +33,12 @@
       <TextField fx:id="tfApellidoP" layoutX="172.0" layoutY="154.0" />
       <TextField fx:id="tfApellidoM" layoutX="397.0" layoutY="77.0" prefHeight="25.0" prefWidth="137.0" />
       <TextField fx:id="tfCorreo" layoutX="385.0" layoutY="154.0" />
-      <PasswordField fx:id="tfPassword" layoutX="138.0" layoutY="220.0" prefHeight="25.0" prefWidth="127.0" />
-      <Button layoutX="498.0" layoutY="270.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
-      <Button layoutX="38.0" layoutY="270.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
-      <Label layoutX="253.0" layoutY="14.0" text="Registro Usuarios">
+      <PasswordField fx:id="tfPassword" layoutX="138.0" layoutY="229.0" prefHeight="25.0" prefWidth="127.0" />
+      <Button layoutX="496.0" layoutY="276.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
+      <Button layoutX="37.0" layoutY="276.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
+      <Label layoutX="229.0" layoutY="14.0" text="Registro Usuarios">
          <font>
-            <Font name="Bell MT" size="17.0" />
+            <Font name="Bell MT" size="19.0" />
          </font></Label>
    </children>
 </AnchorPane>
