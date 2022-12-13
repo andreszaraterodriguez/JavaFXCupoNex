@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
-import javafxcuponex.pojos.Empresas;
+import javafxcuponex.pojos.Empresa;
 import javafxcuponex.util.Constantes;
 import javafxcuponex.util.Utilidades;
 
@@ -26,7 +26,7 @@ import javafxcuponex.util.Utilidades;
 public class FXMLAdminModEmpresaController implements Initializable {
 
     @FXML
-    private TableView<Empresas> tbEmpresas;
+    private TableView<Empresa> tbEmpresas;
     @FXML
     private TextField tfBuscarEmpresa;
     @FXML
@@ -50,7 +50,7 @@ public class FXMLAdminModEmpresaController implements Initializable {
     @FXML
     private TableColumn<?, ?> colRfc;
     
-    private ObservableList<Empresas> listaEmpresas;
+    private ObservableList<Empresa> listaEmpresas;
 
     /**
      * Initializes the controller class.
@@ -80,7 +80,7 @@ public class FXMLAdminModEmpresaController implements Initializable {
         try{
             String jsonRespuesta = ConsumirServiciosWeb.consumirServicioGET(urlWS);
             Gson gson = new Gson();
-            Type tipoListaEmpresas =  new TypeToken<List<Empresas>>(){}.getType(); 
+            Type tipoListaEmpresas =  new TypeToken<List<Empresa>>(){}.getType(); 
             List usuarioWS = gson.fromJson(jsonRespuesta, tipoListaEmpresas);
             listaEmpresas.addAll(usuarioWS);
             tbEmpresas.setItems(listaEmpresas);
