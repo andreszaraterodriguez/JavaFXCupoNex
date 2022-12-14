@@ -11,93 +11,90 @@ import java.net.URL;
 
 
 public class ConsumirServiciosWeb {
-    public static String consumirServicioGET(String url) throws Exception{
-        String resultado ="";
-        URL urlServicio = new URL (url);
-        HttpURLConnection conexionHTTP = (HttpURLConnection) urlServicio.openConnection();
-        conexionHTTP.setRequestMethod("GET");
+     public static String get(String url) throws IOException  {
+        URL accessUrl = new URL(url);
+        HttpURLConnection connection = (HttpURLConnection) accessUrl.openConnection();
+        connection.setRequestMethod("GET");
+        int responseCode = connection.getResponseCode();
+        if(responseCode == HttpURLConnection.HTTP_OK) {
+            return bytesToString(connection.getInputStream());
+        }
+        return "Error en la peticion GET con código: " + responseCode;
+    }
+    
+    public static String post(String url, String parametros) throws IOException {
+        URL accessUrl = new URL(url);
+        HttpURLConnection connection =  (HttpURLConnection) accessUrl.openConnection();
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoOutput(true);
         
-        int codigoRespuesta = conexionHTTP.getResponseCode();
-        System.out.println("codigo de respuesta get :"+codigoRespuesta);
-        if(codigoRespuesta == HttpURLConnection.HTTP_OK){
-            resultado=convertirStreamDatos(conexionHTTP.getInputStream());
-        }
+        OutputStream oStream = connection.getOutputStream();
+        oStream.write(parametros.getBytes());
+        oStream.flush();
+        oStream.close();
         
-        return resultado;
+        int responseCode = connection.getResponseCode();
+        if(responseCode == HttpURLConnection.HTTP_OK) {
+            return bytesToString(connection.getInputStream());
+        }
+        return "Error en la peticion POST con código: " + responseCode;
     }
     
-    public static String consumirServiciosPOST(String url, String parametros) throws Exception{
-        String resultado = "";
-        URL urlServicio = new URL (url);
-        HttpURLConnection conexionHTTP = (HttpURLConnection) urlServicio.openConnection();
-        conexionHTTP.setRequestMethod("POST");
-        conexionHTTP.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-        conexionHTTP.setDoOutput(true);
-        OutputStream salidaStream = conexionHTTP.getOutputStream();
-        salidaStream.write(parametros.getBytes());
-        salidaStream.flush();
-        salidaStream.close();
-        int codigoRespuesta = conexionHTTP.getResponseCode();
-        System.out.println("codigo de espuesta POST: "+codigoRespuesta);
-        if(codigoRespuesta == HttpURLConnection.HTTP_OK){
-             resultado=convertirStreamDatos(conexionHTTP.getInputStream());
-        }
-        return resultado;
+    public static String put(String url, String parametros) throws IOException {
+        URL accessUrl = new URL(url);
+        HttpURLConnection connection =  (HttpURLConnection) accessUrl.openConnection();
+        connection.setRequestMethod("PUT");
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoOutput(true);
         
-    }
-    private static String convertirStreamDatos(InputStream infoBytes) throws IOException{
-            InputStreamReader inputDatos = new InputStreamReader(infoBytes);
-            BufferedReader bufferR = new BufferedReader(inputDatos);
-            StringBuffer respuesta = new StringBuffer();
-            String textoEntrada;
-            while( (textoEntrada = bufferR.readLine()) !=null){
-              respuesta.append(textoEntrada);
-            }
-            bufferR.close();
-            return respuesta.toString();
-    }
-    public static String consumirServicioPUT(String url, String parametros) throws Exception{
-        String resultado = "";
-        URL urlServicio = new URL (url);
-        HttpURLConnection conexionHTTP = (HttpURLConnection) urlServicio.openConnection();
-        conexionHTTP.setRequestMethod("PUT");
-        conexionHTTP.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
-        conexionHTTP.setDoOutput(true);
-        OutputStream salidaStream = conexionHTTP.getOutputStream();
-        salidaStream.write(parametros.getBytes());
-        salidaStream.flush();
-        salidaStream.close();
-        int codigoRespuesta = conexionHTTP.getResponseCode();
-        System.out.println("codigo de espuesta PUT: "+codigoRespuesta);
-        if(codigoRespuesta == HttpURLConnection.HTTP_OK){
-            resultado=convertirStreamDatos(conexionHTTP.getInputStream());
+        OutputStream oStream = connection.getOutputStream();
+        oStream.write(parametros.getBytes());
+        oStream.flush();
+        oStream.close();
+        
+        int responseCode = connection.getResponseCode();
+        if(responseCode == HttpURLConnection.HTTP_OK) {
+            return bytesToString(connection.getInputStream());
         }
-        return resultado;
+        return "Error en la peticion PUT con código: " + responseCode;
     }
     
-    public static String consumirServicioDELETE(String url, String parametros) throws Exception{
-        String resultado = "";
-        URL urlServicio = new URL (url);
-        HttpURLConnection conexionHTTP = (HttpURLConnection) urlServicio.openConnection();
-        conexionHTTP.setRequestMethod("DELETE");
-        conexionHTTP.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
-        conexionHTTP.setDoOutput(true);
-        OutputStream salidaStream = conexionHTTP.getOutputStream();
-        salidaStream.write(parametros.getBytes());
-        salidaStream.flush();
-        salidaStream.close();
-        int codigoRespuesta = conexionHTTP.getResponseCode();
-        System.out.println("codigo de espuesta DELETE: "+codigoRespuesta);
-        if(codigoRespuesta == HttpURLConnection.HTTP_OK){
-             resultado=convertirStreamDatos(conexionHTTP.getInputStream());
+    public static String delete(String url, String parametros) throws IOException {
+        URL accessUrl = new URL(url);
+        HttpURLConnection connection =  (HttpURLConnection) accessUrl.openConnection();
+        connection.setRequestMethod("DELETE");
+        connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        connection.setDoOutput(true);
+        
+        OutputStream oStream = connection.getOutputStream();
+        oStream.write(parametros.getBytes());
+        oStream.flush();
+        oStream.close();
+        
+        int responseCode = connection.getResponseCode();
+        if(responseCode == HttpURLConnection.HTTP_OK) {
+            return bytesToString(connection.getInputStream());
         }
-        return resultado;
+        return "Error en la peticion DELETE con código: " + responseCode;
     }
     
-    
-    
-    
-    
-    
-    
+    private static String bytesToString(InputStream byteStream) throws IOException {
+        InputStreamReader isr = new InputStreamReader(byteStream);
+        BufferedReader br = new BufferedReader(isr);
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+        while((inputLine = br.readLine()) != null) {
+            response.append(inputLine);
+        }
+        br.close();
+        return response.toString();
+    }
 }
+    
+    
+    
+    
+    
+    
+

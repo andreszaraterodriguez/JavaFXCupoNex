@@ -56,9 +56,10 @@ public class FXMLInicioController implements Initializable {
     
     private void verificarInicioSesion(String user, String password){
       try{
-          String url = Constantes.URL_BASE + "acceso/escritorio";
+          
+          String url = Constantes.URL_BASE + "acceso/admin";
           String parametros = "noPersonal="+user+"&password="+password;
-          String resultado = ConsumirServiciosWeb.consumirServiciosPOST(url, parametros);
+          String resultado = ConsumirServiciosWeb.post(url, parametros);
           
           Gson gson = new Gson();
           RespuestaLogin respuesta = gson.fromJson(resultado, RespuestaLogin.class);

@@ -78,7 +78,7 @@ public class FXMLAdminModEmpresaController implements Initializable {
     private void cargarInfoEmpresaWS(){
         String urlWS = Constantes.URL_BASE+"Empresas/all";
         try{
-            String jsonRespuesta = ConsumirServiciosWeb.consumirServicioGET(urlWS);
+            String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
             Gson gson = new Gson();
             Type tipoListaEmpresas =  new TypeToken<List<Empresa>>(){}.getType(); 
             List usuarioWS = gson.fromJson(jsonRespuesta, tipoListaEmpresas);

@@ -26,7 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
-import javafxcuponex.pojos.Administrador;
+import javafxcuponex.pojos.Usuario;
 import javafxcuponex.util.Constantes;
 import javafxcuponex.util.Utilidades;
 
@@ -38,7 +38,7 @@ import javafxcuponex.util.Utilidades;
 public class FXMLAdminModAdminController implements Initializable {
 
     @FXML
-    private TableView<Administrador> tbUsuarios;
+    private TableView<Usuario> tbUsuarios;
     @FXML
     private TableColumn<?, ?> colNombre;
     @FXML
@@ -48,7 +48,7 @@ public class FXMLAdminModAdminController implements Initializable {
     @FXML
     private TableColumn<?, ?> colCorreo;
     
-    private ObservableList<Administrador> listaAdministrador;
+    private ObservableList<Usuario> listaAdministrador;
 
     /**
      * Initializes the controller class.
@@ -68,9 +68,9 @@ public class FXMLAdminModAdminController implements Initializable {
     private void cargarInfoUsuarioWS(){
         String urlWS = Constantes.URL_BASE+"Administrador/all";
         try{
-            String jsonRespuesta = ConsumirServiciosWeb.consumirServicioGET(urlWS);
+            String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
             Gson gson = new Gson();
-            Type tipoListaAdministrador =  new TypeToken<List<Administrador>>(){}.getType(); 
+            Type tipoListaAdministrador =  new TypeToken<List<Usuario>>(){}.getType(); 
             List usuarioWS = gson.fromJson(jsonRespuesta, tipoListaAdministrador);
             listaAdministrador.addAll(usuarioWS);
             tbUsuarios.setItems(listaAdministrador);
