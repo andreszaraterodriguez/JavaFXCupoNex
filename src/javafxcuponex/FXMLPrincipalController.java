@@ -49,7 +49,7 @@ public class FXMLPrincipalController implements Initializable {
     @FXML
     private void clickModEmpresas(ActionEvent event) {
         try{
-            Parent vistaModEmpresa = FXMLLoader.load(getClass().getResource("FXMLAModEmpresa.fxml"));
+            Parent vistaModEmpresa = FXMLLoader.load(getClass().getResource("FXMLModEmpresa.fxml"));
             Scene scenaAdmin = new Scene(vistaModEmpresa);
             Stage scenarioAdmin = new Stage();
             scenarioAdmin.setScene(scenaAdmin);
@@ -63,7 +63,7 @@ public class FXMLPrincipalController implements Initializable {
     @FXML
     private void clickModSucursales(ActionEvent event) {
          try{
-            Parent vistaModSucursal = FXMLLoader.load(getClass().getResource("FXMLAModSucursales.fxml"));
+            Parent vistaModSucursal = FXMLLoader.load(getClass().getResource("FXMLModSucursales.fxml"));
             Scene scenaAdmin = new Scene(vistaModSucursal);
             Stage scenarioAdmin = new Stage();
             scenarioAdmin.setScene(scenaAdmin);
@@ -78,7 +78,7 @@ public class FXMLPrincipalController implements Initializable {
     @FXML
     private void clickModPromociones(ActionEvent event) {
          try{
-            Parent vistaModPromociones = FXMLLoader.load(getClass().getResource("FXMLAModPromociones.fxml"));
+            Parent vistaModPromociones = FXMLLoader.load(getClass().getResource("FXMLModPromociones.fxml"));
             Scene scenaAdmin = new Scene(vistaModPromociones);
             Stage scenarioAdmin = new Stage();
             scenarioAdmin.setScene(scenaAdmin);

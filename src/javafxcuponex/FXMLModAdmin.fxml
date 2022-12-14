@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="600.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModAdminController">
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="600.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModAdminController">
    <children>
       <Label layoutX="69.0" layoutY="81.0" text="Nombre :">
          <font>
@@ -33,12 +33,18 @@
       <TextField fx:id="tfApellidoP" layoutX="172.0" layoutY="154.0" />
       <TextField fx:id="tfApellidoM" layoutX="397.0" layoutY="77.0" prefHeight="25.0" prefWidth="137.0" />
       <TextField fx:id="tfCorreo" layoutX="385.0" layoutY="154.0" />
-      <PasswordField fx:id="tfPassword" layoutX="138.0" layoutY="229.0" prefHeight="25.0" prefWidth="127.0" />
-      <Button layoutX="496.0" layoutY="276.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
-      <Button layoutX="37.0" layoutY="276.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
+      <PasswordField fx:id="tfPassword" layoutX="143.0" layoutY="229.0" prefHeight="25.0" prefWidth="127.0" />
+      <Button layoutX="520.0" layoutY="360.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
+      <Button layoutX="32.0" layoutY="360.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
       <Label layoutX="229.0" layoutY="14.0" text="Registro Usuarios">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Bell MT" size="20.0" />
          </font></Label>
+      <Label layoutX="313.0" layoutY="233.0" text="Telefono" />
+      <TextField fx:id="tfTelefono" layoutX="385.0" layoutY="229.0" />
+      <Label layoutX="63.0" layoutY="298.0" text="Direccion" />
+      <Label layoutX="311.0" layoutY="298.0" text="Fecha Nacimiento" />
+      <TextField fx:id="tfDireccion" layoutX="132.0" layoutY="294.0" />
+      <TextField fx:id="tfFechaN" layoutX="415.0" layoutY="294.0" promptText="AAAA-MM-DD" />
    </children>
 </AnchorPane>

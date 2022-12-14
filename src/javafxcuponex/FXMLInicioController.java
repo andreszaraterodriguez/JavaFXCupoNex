@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
 import javafxcuponex.pojos.LoginCredentials;
+import javafxcuponex.pojos.Respuesta;
 import javafxcuponex.pojos.RespuestaLogin;
 import javafxcuponex.util.Constantes;
 import javafxcuponex.util.Utilidades;
@@ -59,20 +60,24 @@ public class FXMLInicioController implements Initializable {
       try{
           LoginCredentials credencial = new LoginCredentials(user, password);
           String url = Constantes.URL_BASE + "acceso/admin";
+          
+          
           Gson gson = new Gson();
           String parametros = gson.toJson(credencial);
           String resultado = ConsumirServiciosWeb.post(url, parametros);
-          
-         /* RespuestaLogin respuesta = gson.fromJson(resultado, RespuestaLogin.class);
+          System.out.println(parametros);
+          Respuesta respuesta = gson.fromJson(resultado, Respuesta.class);
           if(!respuesta.getError()){
-              Utilidades.mostrarAlertaSimple("Usuario verificado...", "Bienbenido"+ respuesta.getNombre()+"al sistema", Alert.AlertType.INFORMATION);
+              Utilidades.mostrarAlertaSimple("Usuario verificado...", "Bienbenido"+"al sistema", Alert.AlertType.INFORMATION);
+              irPantallaPrincipal();
           }else{
               Utilidades.mostrarAlertaSimple("usuario incorrecto...", respuesta.getMensaje(), Alert.AlertType.ERROR);
           }
-          */
+       
          System.out.println(resultado);
           
       }catch (Exception e){
+          
           e.printStackTrace();
           Utilidades.mostrarAlertaSimple("Error de conexion", e.getMessage(), Alert.AlertType.ERROR);
       }

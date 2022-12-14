@@ -7,11 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModEmpresaController">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="630.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModEmpresaController">
    <children>
-      <Label layoutX="256.0" layoutY="14.0" text="Registro de Empresas">
+      <Label layoutX="243.0" layoutY="14.0" text="Registro de Empresas">
          <font>
-            <Font name="Bell MT" size="17.0" />
+            <Font name="Bell MT" size="20.0" />
          </font>
       </Label>
       <TextField fx:id="tfNombre" layoutX="93.0" layoutY="76.0" prefHeight="25.0" prefWidth="137.0" />
@@ -25,11 +25,6 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="31.0" layoutY="134.0" text="Nombre Representante Legal">
-         <font>
-            <Font name="Bell MT" size="14.0" />
-         </font>
-      </Label>
       <Label layoutX="93.0" layoutY="267.0" prefHeight="17.0" prefWidth="15.0" text="Label" />
       <Label layoutX="370.0" layoutY="134.0" text="Email">
          <font>
@@ -37,8 +32,7 @@
          </font>
       </Label>
       <TextField fx:id="tfNombreComercial" layoutX="387.0" layoutY="76.0" prefHeight="25.0" prefWidth="178.0" />
-      <TextField fx:id="tfNombreRL" layoutX="209.0" layoutY="130.0" prefHeight="25.0" prefWidth="146.0" />
-      <TextField fx:id="tfEmail" layoutX="413.0" layoutY="130.0" prefHeight="25.0" prefWidth="161.0" />
+      <TextField fx:id="tfCorreo" layoutX="413.0" layoutY="130.0" prefHeight="25.0" prefWidth="161.0" />
       <Label layoutX="31.0" layoutY="192.0" text="Direccion (Calle y numero)">
          <font>
             <Font name="Bell MT" size="14.0" />
@@ -69,21 +63,29 @@
          </font>
       </Label>
       <TextField fx:id="tfPaginaW" layoutX="107.0" layoutY="236.0" prefHeight="25.0" prefWidth="187.0" />
-      <Label layoutX="319.0" layoutY="290.0" text="RFC">
+      <Label layoutX="327.0" layoutY="290.0" text="RFC">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfRfc" layoutX="367.0" layoutY="286.0" />
-      <Button layoutX="530.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickAgregar" text="Agregar">
+      <TextField fx:id="tfRfc" layoutX="380.0" layoutY="286.0" />
+      <Button layoutX="531.0" layoutY="394.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="31.0" layoutY="356.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar">
+      <Button layoutX="31.0" layoutY="394.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
+      <Label layoutX="33.0" layoutY="341.0" text="Estatus" />
+      <TextField fx:id="tfEstatus" layoutX="101.0" layoutY="337.0" />
+      <Label layoutX="31.0" layoutY="134.0" text="Representante Legal">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfRepresentanteL" layoutX="162.0" layoutY="130.0" />
    </children>
 </AnchorPane>

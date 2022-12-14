@@ -11,12 +11,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
 import javafxcuponex.pojos.Empresa;
 import javafxcuponex.util.Constantes;
@@ -33,8 +38,7 @@ public class FXMLAdminModEmpresaController implements Initializable {
     private TableColumn<?, ?> colNombre;
     @FXML
     private TableColumn<?, ?> colNombreC;
-    @FXML
-    private TableColumn<?, ?> colNombreRL;
+    
     @FXML
     private TableColumn<?, ?> colEmail;
     @FXML
@@ -64,7 +68,7 @@ public class FXMLAdminModEmpresaController implements Initializable {
         listaEmpresas =  FXCollections.observableArrayList();
         colNombre.setCellValueFactory(new PropertyValueFactory ("nombre"));
         colNombreC.setCellValueFactory(new PropertyValueFactory ("nombreC"));
-        colNombreRL.setCellValueFactory(new PropertyValueFactory ("nombreRL"));
+   
         colEmail.setCellValueFactory(new PropertyValueFactory ("email"));
         colDireccion.setCellValueFactory(new PropertyValueFactory ("direccion"));
         colCodigoP.setCellValueFactory(new PropertyValueFactory ("codigoP"));
@@ -100,7 +104,12 @@ public class FXMLAdminModEmpresaController implements Initializable {
     @FXML
     private void clickAgregarEmpresa(ActionEvent event) {
         try{
-            
+            Parent vista = FXMLLoader.load(getClass().getResource("FXMLModEmpresa.fxml"));
+            Scene escenaFormulario = new Scene(vista);
+            Stage escenarioFormulario = new Stage();
+            escenarioFormulario.setScene(escenaFormulario);
+            escenarioFormulario.initModality(Modality.APPLICATION_MODAL);
+            escenarioFormulario.showAndWait();
         } catch (Exception e){
             
         }

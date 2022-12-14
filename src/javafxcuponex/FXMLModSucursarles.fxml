@@ -7,12 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxcuponex.FXMLModSucursarlesController">
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="600.0" style="-fx-background-color: #009494;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModSucursarlesController">
    <children>
-      <Label layoutX="231.0" layoutY="14.0" text="Registro Sucursales">
+      <Label layoutX="219.0" layoutY="14.0" text="Registro Sucursales">
          <font>
-            <Font name="Bell MT" size="17.0" />
+            <Font name="Bell MT" size="20.0" />
          </font>
       </Label>
       <Label layoutX="39.0" layoutY="81.0" text="Nombre">

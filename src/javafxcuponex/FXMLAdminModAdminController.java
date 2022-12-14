@@ -82,10 +82,12 @@ public class FXMLAdminModAdminController implements Initializable {
 
     @FXML
     private void clickEditarUsuario(ActionEvent event) {
+        
     }
 
     @FXML
     private void clickEliminarUsuario(ActionEvent event) {
+        
     }
 
     @FXML
