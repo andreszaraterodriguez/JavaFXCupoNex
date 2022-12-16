@@ -39,11 +39,12 @@ public class FXMLEditModSucursalesController implements Initializable {
     private TextField tfLatitud;
     @FXML
     private TextField tfLongitud;
-    private Sucursal sucursal;
     @FXML
     private ComboBox<?> cbEncargado;
     @FXML
     private ComboBox<?> cbEmpresas;
+    
+    private Sucursal sucursal;
     /**
      * Initializes the controller class.
      */
@@ -55,10 +56,31 @@ public class FXMLEditModSucursalesController implements Initializable {
 
     @FXML
     private void clickGuardar(ActionEvent event) {
+        
+        String nombre = tfNombre.getText();
+        String direccinn= tfDireccion.getText();
+        String codigoP = tfCodP.getText();
+        String colonia = tfColonia.getText();
+        String ciudad = tfCiudad.getText();
+        String telefono = tfTelefono.getText();
+        
+        Sucursal sucursal = new Sucursal();
+        sucursal.setNombre(nombre);
+        sucursal.setDireccion(direccinn);
+        sucursal.setCodigoPostal(codigoP);
+        sucursal.setColonia(colonia);
+        sucursal.setCiudad(ciudad);
+        sucursal.setTelefono(telefono);
     }
     
      public void recibirInfo(Sucursal sucursal){
       this.sucursal = sucursal;
+      tfNombre.setText(sucursal.getNombre());
+      tfDireccion.setText(sucursal.getDireccion());
+      tfCodP.setText(sucursal.getCodigoPostal());
+      tfColonia.setText(sucursal.getColonia());
+      tfCiudad.setText(sucursal.getCiudad());
+      tfTelefono.setText(sucursal.getTelefono());
       
     }
     

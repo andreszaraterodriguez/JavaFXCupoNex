@@ -27,6 +27,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
+import javafxcuponex.pojos.Respuesta;
 import javafxcuponex.pojos.Sucursal;
 import javafxcuponex.pojos.Usuario;
 import javafxcuponex.util.Constantes;
@@ -134,6 +135,32 @@ public class FXMLAdminModSucursalesController implements Initializable {
 
     @FXML
     private void clickEliminar(ActionEvent event) {
+        int selectedTrow= tbSucursales.getSelectionModel().getSelectedIndex();
+        if(selectedTrow== -1){
+          Utilidades.mostrarAlertaSimple("Error ", "No seleciono ninguna sucursal..", Alert.AlertType.ERROR);
+          return;
+        }
+        int sucursalSeleccionadoId= listaSucursal.get(selectedTrow).getId();
+        Boolean result=Utilidades.mostrarAlertaConexion("Eliminar sucursal", "Seguro que desea eliminar sucursal", Alert.AlertType.NONE);
+        if(result){
+            eliminarSucursal(sucursalSeleccionadoId);
+        }
+    }
+       private void eliminarSucursal(int id){
+            String urlWS = Constantes.URL_BASE+"sucursal/eliminar/"+id;
+        try{
+            String jsonRespuesta = ConsumirServiciosWeb.delete(urlWS);
+            Gson gson = new Gson();
+            Respuesta respuesta = gson.fromJson(jsonRespuesta, Respuesta.class); 
+            if(respuesta.getError()){
+                  Utilidades.mostrarAlertaSimple("Error ", respuesta.getMensaje() , Alert.AlertType.ERROR);
+                  return;
+            }
+            Utilidades.mostrarAlertaSimple("Realizado.. ", respuesta.getMensaje() , Alert.AlertType.INFORMATION);
+
+        }catch (Exception e){
+            Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
+        }
     }
 
     @FXML

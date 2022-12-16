@@ -28,6 +28,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
 import javafxcuponex.pojos.Promocion;
+import javafxcuponex.pojos.Respuesta;
 import javafxcuponex.pojos.Usuario;
 import javafxcuponex.util.Constantes;
 import javafxcuponex.util.Utilidades;
@@ -101,7 +102,7 @@ public class FXMLAdminModPromocionesController implements Initializable {
     private void clickEditado(ActionEvent event) {
         int selectedTrow= tbPromociones.getSelectionModel().getSelectedIndex();
         if(selectedTrow== -1){
-          Utilidades.mostrarAlertaSimple("Error ", "No seleciono ningun usuario", Alert.AlertType.ERROR);
+          Utilidades.mostrarAlertaSimple("Error ", "No seleciono ninguno...", Alert.AlertType.ERROR);
           return;
         }
         
@@ -125,8 +126,36 @@ public class FXMLAdminModPromocionesController implements Initializable {
 
     @FXML
     private void clickEliminar(ActionEvent event) {
+        int selectedTrow= tbPromociones.getSelectionModel().getSelectedIndex();
+        if(selectedTrow== -1){
+          Utilidades.mostrarAlertaSimple("Error ", "No seleciono ninguna promocion", Alert.AlertType.ERROR);
+          return;
+        }
+        int promocionSeleccionadoId= listaPromocion.get(selectedTrow).getId();
+        Boolean result=Utilidades.mostrarAlertaConexion("Eliminar promocion", "Seguro que desea eliminar promocion", Alert.AlertType.NONE);
+        if(result){
+            eliminarPromocion(promocionSeleccionadoId);
+        }
         
     }
+    
+        private void eliminarPromocion(int id){
+            String urlWS = Constantes.URL_BASE+"promocion/eliminar/"+id;
+        try{
+            String jsonRespuesta = ConsumirServiciosWeb.delete(urlWS);
+            Gson gson = new Gson();
+            Respuesta respuesta = gson.fromJson(jsonRespuesta, Respuesta.class); 
+            if(respuesta.getError()){
+                  Utilidades.mostrarAlertaSimple("Error ", respuesta.getMensaje() , Alert.AlertType.ERROR);
+                  return;
+            }
+            Utilidades.mostrarAlertaSimple("Realizado.. ", respuesta.getMensaje() , Alert.AlertType.INFORMATION);
+
+        }catch (Exception e){
+            Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
+        }
+    }
+    
 
     @FXML
     private void clickAgregar(ActionEvent event) {

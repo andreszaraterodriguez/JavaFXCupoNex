@@ -17,15 +17,15 @@
          </font></Button>
       <Label layoutX="98.0" layoutY="102.0" text="Ingrese usuario">
          <font>
-            <Font name="Bell MT" size="15.0" />
+            <Font name="Bell MT" size="16.0" />
          </font></Label>
       <Label layoutX="124.0" layoutY="160.0" text="Contraseña">
          <font>
-            <Font name="Bell MT" size="15.0" />
+            <Font name="Bell MT" size="16.0" />
          </font></Label>
-      <Label layoutX="198.0" layoutY="14.0" prefHeight="25.0" prefWidth="105.0" text="CUPONEX">
+      <Label layoutX="193.0" layoutY="14.0" prefHeight="26.0" prefWidth="115.0" text="CUPONEX">
          <font>
-            <Font name="Bell MT" size="20.0" />
+            <Font name="Bell MT" size="22.0" />
          </font>
       </Label>
    </children>
