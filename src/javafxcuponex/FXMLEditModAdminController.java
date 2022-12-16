@@ -61,7 +61,7 @@ public class FXMLEditModAdminController implements Initializable {
                 String nombre = tfNombre.getText();
         String apellidop = tfApellidoP.getText();
         String apellidoM = tfApellidoM.getText();
-        String correo = tfCorreo.getText();
+        //String correo = tfCorreo.getText();
         String password = tfPassword.getText();
         String direccion =tfDireccion.getText();
         String fechaN = tfFechaN.getText();
@@ -71,7 +71,7 @@ public class FXMLEditModAdminController implements Initializable {
         usuario.setNombre(nombre);
         usuario.setApellidoPaterno(apellidop);
         usuario.setApellidoMaterno(apellidoM);
-        usuario.setCorreo(correo);
+        //usuario.setCorreo(correo);
         usuario.setPassword(password);
         usuario.setDireccion(direccion);
         usuario.setTelefono(telefono);
@@ -111,7 +111,7 @@ public class FXMLEditModAdminController implements Initializable {
         tfNombre.setText(usuario.getNombre());
         tfApellidoP.setText(usuario.getApellidoPaterno());
         tfApellidoM.setText(usuario.getApellidoMaterno());
-        tfCorreo.setText(usuario.getCorreo());
+        //tfCorreo.setText(usuario.getCorreo());
         tfPassword.setText(usuario.getPassword());
         tfDireccion.setText(usuario.getDireccion());
         tfFechaN.setText(usuario.getFechaDeNacimiento());

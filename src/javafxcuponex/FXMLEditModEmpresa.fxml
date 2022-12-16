@@ -63,12 +63,6 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfRfc" layoutX="397.0" layoutY="310.0" />
-      <Label layoutX="340.0" layoutY="314.0" text="RFC">
-         <font>
-            <Font name="Bell MT" size="14.0" />
-         </font>
-      </Label>
       <Button layoutX="546.0" layoutY="390.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
       <Label layoutX="273.0" layoutY="16.0" text="Editar Empresa">
          <font>

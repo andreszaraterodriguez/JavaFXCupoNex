@@ -50,8 +50,6 @@ public class FXMLEditModEmpresaController implements Initializable {
     private TextField tfTelefono;
     @FXML
     private TextField tfCiudad;
-    @FXML
-    private TextField tfRfc;
     
     private Empresa empresa;
     @FXML
@@ -104,7 +102,7 @@ public class FXMLEditModEmpresaController implements Initializable {
         tfPaginaW.setText(empresa.getPaginaWeb());
         tfTelefono.setText(empresa.getTelefono());
         tfCiudad.setText(empresa.getCiudad());
-        tfRfc.setText(empresa.getRfc());
+       // tfRfc.setText(empresa.getRfc());
        for(int i=0; i<respresentantes.size();i++){
            if(respresentantes.get(i).getId()==this.empresa.getRepresentanteLegalId()){
                cbRepresentannte.getSelectionModel().select(i);
@@ -123,7 +121,7 @@ public class FXMLEditModEmpresaController implements Initializable {
         String paginaW = tfPaginaW.getText();
         String telefono = tfTelefono.getText();
         String ciudad = tfCiudad.getText();
-        String rfc = tfRfc.getText();
+        //String rfc = tfRfc.getText();
         
       
         empresa.setNombre(nombre);
@@ -134,7 +132,7 @@ public class FXMLEditModEmpresaController implements Initializable {
         empresa.setPaginaWeb(paginaW);
         empresa.setTelefono(telefono);
         empresa.setCiudad(ciudad);
-        empresa.setRfc(rfc);
+       // empresa.setRfc(rfc);
         verificarCreacionEmpresa(empresa);
     }
     
