@@ -67,8 +67,9 @@
       <TextField fx:id="tfTelefono" layoutX="385.0" layoutY="208.0" />
       <TextField fx:id="tfLatitud" layoutX="102.0" layoutY="263.0" />
       <TextField fx:id="tfLongitud" layoutX="385.0" layoutY="263.0" />
-      <TextField fx:id="tfNombreE" layoutX="166.0" layoutY="316.0" />
-      <Button layoutX="37.0" layoutY="367.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
       <Button layoutX="508.0" layoutY="367.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
+      <ComboBox fx:id="cbEncargado" layoutX="165.0" layoutY="315.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbEmpresas" layoutX="282.0" layoutY="355.0" prefWidth="150.0" />
+      <Label layoutX="172.0" layoutY="359.0" text="Empresa" />
    </children>
 </AnchorPane>

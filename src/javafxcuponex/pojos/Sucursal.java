@@ -14,7 +14,7 @@ public class Sucursal {
     private String ciudad;
     private String telefono;
     private Double latitud;
-    private Double longitd;
+    private Double longitud;
     private Integer encargadoId;
     private Usuario enacrgado;
     private List<Promocion> promociones;
@@ -33,7 +33,7 @@ public class Sucursal {
         this.ciudad = ciudad;
         this.telefono = telefono;
         this.latitud = latitud;
-        this.longitd = longitd;
+        this.longitud = longitd;
         this.encargadoId = encargadoId;
         this.enacrgado = enacrgado;
         this.promociones = promociones;
@@ -119,12 +119,12 @@ public class Sucursal {
         this.latitud = latitud;
     }
 
-    public Double getLongitd() {
-        return longitd;
+    public Double getLongitud() {
+        return longitud;
     }
 
-    public void setLongitd(Double longitd) {
-        this.longitd = longitd;
+    public void setLongitud(Double longitd) {
+        this.longitud = longitd;
     }
 
     public Integer getEncargadoId() {
@@ -157,7 +157,7 @@ public class Sucursal {
 
     @Override
     public String toString() {
-        return "Sucursal{" + "id=" + id + ", empresaId=" + empresaId + ", empresa=" + empresa + ", nombre=" + nombre + ", direccion=" + direccion + ", codigoPostal=" + codigoPostal + ", colonia=" + colonia + ", ciudad=" + ciudad + ", telefono=" + telefono + ", latitud=" + latitud + ", longitd=" + longitd + ", encargadoId=" + encargadoId + ", enacrgado=" + enacrgado + '}';
+        return "Sucursal{" + "id=" + id + ", empresaId=" + empresaId + ", empresa=" + empresa + ", nombre=" + nombre + ", direccion=" + direccion + ", codigoPostal=" + codigoPostal + ", colonia=" + colonia + ", ciudad=" + ciudad + ", telefono=" + telefono + ", latitud=" + latitud + ", longitd=" + longitud + ", encargadoId=" + encargadoId + ", enacrgado=" + enacrgado + '}';
     }
     
     

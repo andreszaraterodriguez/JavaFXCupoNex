@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
 import javafxcuponex.pojos.Empresa;
 import javafxcuponex.pojos.Respuesta;
@@ -30,8 +31,6 @@ public class FXMLModEmpresaController implements Initializable {
     private TextField tfNombre;
     @FXML
     private TextField tfNombreComercial;
-    
-    private TextField tfEmail;
     @FXML
     private TextField tfDireccion;
     @FXML
@@ -62,6 +61,8 @@ public class FXMLModEmpresaController implements Initializable {
 
     @FXML
     private void clickCancelar(ActionEvent event) {
+        
+        
     }
 
     @FXML
@@ -80,7 +81,7 @@ public class FXMLModEmpresaController implements Initializable {
      
         
         Empresa empresa = new Empresa();
-        empresa.setNombre(nombre);
+        empresa.setNombre(nombre);  
         empresa.setNombreComercial(nombreC);
         empresa.setCorreo(correo);
         empresa.setDireccion(direccion);
@@ -90,7 +91,7 @@ public class FXMLModEmpresaController implements Initializable {
         empresa.setPaginaWeb(paginaW);
         empresa.setRfc(rfc);
         empresa.setEstatus(estatus);
-       // empresa.setRepresentanteLegal(representanteLegal);
+
         verificarCreacionEmpresa(empresa);
         
     }

@@ -6,14 +6,22 @@
 package javafxcuponex;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
+import javafxcuponex.pojos.Empresa;
 import javafxcuponex.pojos.Respuesta;
 import javafxcuponex.pojos.Sucursal;
 import javafxcuponex.pojos.Usuario;
@@ -44,7 +52,13 @@ public class FXMLModSucursarlesController implements Initializable {
     @FXML
     private TextField tfLongitud;
     @FXML
-    private TextField tfNombreE;
+    private ComboBox<Usuario> cbEncargado;
+    
+    private ObservableList<Usuario> usuarios;
+    @FXML
+    private ComboBox<Empresa> cbEmpresas;
+       private ObservableList<Empresa> empresas;
+
 
     /**
      * Initializes the controller class.
@@ -52,23 +66,79 @@ public class FXMLModSucursarlesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+       llenarCombobox();
     }    
 
-    @FXML
-    private void clickCancelar(ActionEvent event) {
+    
+    private void llenarCombobox(){
+        usuarios = FXCollections.observableArrayList();
+        usuarios.addAll(recuperaAdmin());
+        cbEncargado.setItems(usuarios);
+        
+        empresas = FXCollections.observableArrayList();
+        empresas.addAll(recuperaEmpresas());
+        cbEmpresas.setItems(empresas);
+        
+    }
+      private List<Empresa> recuperaEmpresas(){
+        List<Empresa> empresas = new ArrayList();
+        try{
+              String url = Constantes.URL_BASE +"empresa/leerTodas";
+              String resultado = ConsumirServiciosWeb.get(url); 
+              Gson gson = new Gson();
+              Type tipoListaEmpresas =  new TypeToken<List<Empresa>>(){}.getType(); 
+              empresas  = gson.fromJson(resultado, tipoListaEmpresas);  
+            
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+       return empresas;
+    }
+    
+    private List<Usuario> recuperaAdmin(){
+        List<Usuario> administradores = new ArrayList();
+        try{
+              String url = Constantes.URL_BASE +"usuario/leerTodos";
+              String resultado = ConsumirServiciosWeb.get(url); 
+              Gson gson = new Gson();
+              Type tipoListaAdministrador =  new TypeToken<List<Usuario>>(){}.getType(); 
+              List<Usuario> aux  = gson.fromJson(resultado, tipoListaAdministrador);  
+              System.out.println(aux);
+              for(int i=0; i < aux.size();i++){
+                  Usuario usuario = aux.get(i);
+                  if(usuario.getAdministracion()){
+                      administradores.add(usuario);
+                  }
+              }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+       return administradores;
     }
 
     @FXML
     private void clickGuardar(ActionEvent event) {
-        String nombre = tfNombre.getText();
+        try{
+             String nombre = tfNombre.getText();
         String direccion = tfDireccion.getText();
         String codigoP = tfCodP.getText();
         String colonia = tfColonia.getText();
         String ciudad = tfCiudad.getText();
         String telefono = tfTelefono.getText();
-        String latitud = tfLatitud.getText();
-       // Double longitud = tfLongitud
-       // String nombreE = tfNombreE
+  
+        Double longitud = Double.parseDouble(tfLongitud.getText());
+        Double latitud = Double.parseDouble(tfLatitud.getText());
+        Usuario usuarioEncargado = cbEncargado.getValue();
+        Empresa empresaSelect = cbEmpresas.getValue();
+        
+        if(usuarioEncargado == null){
+         Utilidades.mostrarAlertaSimple("Complete datos...", "Seleccione encargado..", Alert.AlertType.INFORMATION);
+         return;
+        }
+         if(empresaSelect == null){
+         Utilidades.mostrarAlertaSimple("Complete datos...", "Seleccione empresa..", Alert.AlertType.INFORMATION);
+         return;
+        }
         
         Sucursal sucursal = new Sucursal();
         sucursal.setNombre(nombre);
@@ -77,9 +147,16 @@ public class FXMLModSucursarlesController implements Initializable {
         sucursal.setColonia(colonia);
         sucursal.setCiudad(ciudad);
         sucursal.setTelefono(telefono);
-        sucursal.setLatitud(Double.NaN);
-        sucursal.setLongitd(Double.NaN);
+        sucursal.setLatitud(latitud);
+        sucursal.setLongitud(longitud);
+        sucursal.setEncargadoId(usuarioEncargado.getId());
+        sucursal.setEmpresaId(empresaSelect.getId());
         registrarS(sucursal);
+        } catch (Exception e){
+           Utilidades.mostrarAlertaSimple("Algo salio mal...", e.getMessage(), Alert.AlertType.INFORMATION);
+
+        }
+   
         
         
     }

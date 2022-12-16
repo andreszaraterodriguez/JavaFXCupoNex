@@ -36,7 +36,7 @@
       <PasswordField fx:id="tfPassword" layoutX="143.0" layoutY="229.0" prefHeight="25.0" prefWidth="127.0" />
       <Button layoutX="520.0" layoutY="360.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
       <Button layoutX="32.0" layoutY="360.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
-      <Label layoutX="229.0" layoutY="14.0" text="Registro Usuarios">
+      <Label layoutX="229.0" layoutY="14.0" text="Registro Usuario">
          <font>
             <Font name="Bell MT" size="20.0" />
          </font></Label>

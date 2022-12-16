@@ -7,23 +7,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="760.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModSucursalesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="960.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModSucursalesController">
    <children>
-      <Label layoutX="337.0" layoutY="14.0" text="Sucursales">
+      <Label layoutX="437.0" layoutY="14.0" text="Sucursales">
          <font>
             <Font name="Bell MT" size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="tbSucursales" layoutY="100.0" prefHeight="200.0" prefWidth="760.0">
+      <TableView fx:id="tbSucursales" layoutY="100.0" prefHeight="200.0" prefWidth="960.0">
         <columns>
-          <TableColumn prefWidth="109.0" text="Nombre" />
-          <TableColumn prefWidth="109.0" text="Direccion" />
-            <TableColumn prefWidth="117.0" text="Codigo Postal" />
-            <TableColumn prefWidth="104.0" text="Colonia" />
-            <TableColumn prefWidth="90.0" text="Ciudad" />
-            <TableColumn prefWidth="86.0" text="Telefono" />
-            <TableColumn prefWidth="75.0" text="Latitud" />
-            <TableColumn prefWidth="62.0" text="Longitud" />
+          <TableColumn fx:id="colNombre" prefWidth="109.0" text="Nombre" />
+          <TableColumn fx:id="colDireccion" prefWidth="109.0" text="Direccion" />
+            <TableColumn fx:id="colCodigoP" prefWidth="117.0" text="Codigo Postal" />
+            <TableColumn fx:id="colColonia" prefWidth="104.0" text="Colonia" />
+            <TableColumn fx:id="colCiudad" prefWidth="90.0" text="Ciudad" />
+            <TableColumn fx:id="colTelefono" prefWidth="86.0" text="Telefono" />
+            <TableColumn fx:id="colLatitud" prefWidth="88.0" text="Latitud" />
+            <TableColumn fx:id="colLongitud" prefWidth="76.0" text="Longitud" />
+            <TableColumn fx:id="colNombreE" prefWidth="87.0" text="Nombre Encargado" />
+            <TableColumn fx:id="colEmpresa" prefWidth="86.0" text="Empresa" />
         </columns>
       </TableView>
       <Button layoutX="37.0" layoutY="332.0" mnemonicParsing="false" onAction="#clickEditar" text="Editar">

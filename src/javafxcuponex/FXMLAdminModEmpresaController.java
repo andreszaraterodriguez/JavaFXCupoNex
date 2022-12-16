@@ -24,6 +24,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
 import javafxcuponex.pojos.Empresa;
+import javafxcuponex.pojos.Usuario;
 import javafxcuponex.util.Constantes;
 import javafxcuponex.util.Utilidades;
 
@@ -62,39 +63,68 @@ public class FXMLAdminModEmpresaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        configurarTabla();
+        cargarInfoEmpresaWS();
     }    
     
     private void configurarTabla(){
         listaEmpresas =  FXCollections.observableArrayList();
         colNombre.setCellValueFactory(new PropertyValueFactory ("nombre"));
-        colNombreC.setCellValueFactory(new PropertyValueFactory ("nombreC"));
-   
-        colEmail.setCellValueFactory(new PropertyValueFactory ("email"));
+        colNombreC.setCellValueFactory(new PropertyValueFactory ("nombreComercial"));
+        colEmail.setCellValueFactory(new PropertyValueFactory ("correo"));
         colDireccion.setCellValueFactory(new PropertyValueFactory ("direccion"));
-        colCodigoP.setCellValueFactory(new PropertyValueFactory ("codigoP"));
+        colCodigoP.setCellValueFactory(new PropertyValueFactory ("codigoPostal"));
         colCiudad.setCellValueFactory(new PropertyValueFactory ("ciudad"));
         colTelefono.setCellValueFactory(new PropertyValueFactory ("telefono"));
-        colPaginaW.setCellValueFactory(new PropertyValueFactory ("paginaW"));
+        colPaginaW.setCellValueFactory(new PropertyValueFactory ("paginaWeb"));
         colRfc.setCellValueFactory(new PropertyValueFactory ("rfc"));
         
     }
     
     private void cargarInfoEmpresaWS(){
-        String urlWS = Constantes.URL_BASE+"Empresas/all";
+        String urlWS = Constantes.URL_BASE+"empresa/leerTodas";
         try{
             String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
             Gson gson = new Gson();
             Type tipoListaEmpresas =  new TypeToken<List<Empresa>>(){}.getType(); 
-            List usuarioWS = gson.fromJson(jsonRespuesta, tipoListaEmpresas);
-            listaEmpresas.addAll(usuarioWS);
+            List empresaWS = gson.fromJson(jsonRespuesta, tipoListaEmpresas);
+            listaEmpresas.addAll(empresaWS);
             tbEmpresas.setItems(listaEmpresas);
         }catch (Exception e ){
             Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
         }
     }
+    
+    
+    
+    
+    
+    
 
     @FXML
     private void clickEditarEmpresa(ActionEvent event) {
+           int selectedTrow= tbEmpresas.getSelectionModel().getSelectedIndex();
+        if(selectedTrow== -1){
+          Utilidades.mostrarAlertaSimple("Error ", "No seleciono ningun usuario", Alert.AlertType.ERROR);
+          return;
+        }
+        
+        Empresa empresa= listaEmpresas.get(selectedTrow);
+            try{
+           FXMLLoader cargador = new FXMLLoader(getClass().getResource("FXMLEditModEmpresa.fxml"));
+           Parent vistaEditar = cargador.load();
+           FXMLEditModEmpresaController controlador = cargador.getController();
+           controlador.recibirInfo(empresa);
+           Scene editUs = new Scene(vistaEditar);
+           Stage stage = new Stage();
+           stage.setScene(editUs);
+           stage.initModality(Modality.APPLICATION_MODAL);
+           stage.showAndWait();
+        } catch(Exception e){
+            e.printStackTrace();
+             Utilidades.mostrarAlertaSimple("Error ", e.getMessage(), Alert.AlertType.ERROR);
+
+        }
     }
 
     @FXML

@@ -40,6 +40,24 @@ public class ConsumirServiciosWeb {
         }
         return "Error en la peticion POST con código: " + responseCode;
     }
+    public static String postFoto(String url, byte [] foto) throws IOException {
+        URL accessUrl = new URL(url);
+        HttpURLConnection connection =  (HttpURLConnection) accessUrl.openConnection();
+        connection.setRequestMethod("POST");
+       // connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoOutput(true);
+        
+        OutputStream oStream = connection.getOutputStream();
+        oStream.write(foto);
+        oStream.flush();
+        oStream.close();
+        
+        int responseCode = connection.getResponseCode();
+        if(responseCode == HttpURLConnection.HTTP_OK) {
+            return bytesToString(connection.getInputStream());
+        }
+        return "Error en la peticion POST con código: " + responseCode;
+    }
     
     public static String put(String url, String parametros) throws IOException {
         URL accessUrl = new URL(url);
@@ -60,17 +78,11 @@ public class ConsumirServiciosWeb {
         return "Error en la peticion PUT con código: " + responseCode;
     }
     
-    public static String delete(String url, String parametros) throws IOException {
+    public static String delete(String url) throws IOException {
         URL accessUrl = new URL(url);
         HttpURLConnection connection =  (HttpURLConnection) accessUrl.openConnection();
         connection.setRequestMethod("DELETE");
-        connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-        connection.setDoOutput(true);
-        
-        OutputStream oStream = connection.getOutputStream();
-        oStream.write(parametros.getBytes());
-        oStream.flush();
-        oStream.close();
+       
         
         int responseCode = connection.getResponseCode();
         if(responseCode == HttpURLConnection.HTTP_OK) {

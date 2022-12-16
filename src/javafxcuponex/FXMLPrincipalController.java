@@ -35,7 +35,7 @@ public class FXMLPrincipalController implements Initializable {
     @FXML
     private void clickModAdministrador(ActionEvent event) {
         try{
-             Parent vistaModAdmin = FXMLLoader.load(getClass().getResource("FXMLModAdmin.fxml"));
+             Parent vistaModAdmin = FXMLLoader.load(getClass().getResource("FXMLAdminModAdmin.fxml"));
              Scene scenaAdmin = new Scene(vistaModAdmin);
              Stage scenarioAdmin = new Stage();
              scenarioAdmin.setScene(scenaAdmin);
@@ -49,7 +49,7 @@ public class FXMLPrincipalController implements Initializable {
     @FXML
     private void clickModEmpresas(ActionEvent event) {
         try{
-            Parent vistaModEmpresa = FXMLLoader.load(getClass().getResource("FXMLModEmpresa.fxml"));
+            Parent vistaModEmpresa = FXMLLoader.load(getClass().getResource("FXMLAdminModEmpresa.fxml"));
             Scene scenaAdmin = new Scene(vistaModEmpresa);
             Stage scenarioAdmin = new Stage();
             scenarioAdmin.setScene(scenaAdmin);
@@ -63,7 +63,7 @@ public class FXMLPrincipalController implements Initializable {
     @FXML
     private void clickModSucursales(ActionEvent event) {
          try{
-            Parent vistaModSucursal = FXMLLoader.load(getClass().getResource("FXMLModSucursales.fxml"));
+            Parent vistaModSucursal = FXMLLoader.load(getClass().getResource("FXMLAdminModSucursales.fxml"));
             Scene scenaAdmin = new Scene(vistaModSucursal);
             Stage scenarioAdmin = new Stage();
             scenarioAdmin.setScene(scenaAdmin);
@@ -78,16 +78,18 @@ public class FXMLPrincipalController implements Initializable {
     @FXML
     private void clickModPromociones(ActionEvent event) {
          try{
-            Parent vistaModPromociones = FXMLLoader.load(getClass().getResource("FXMLModPromociones.fxml"));
+            Parent vistaModPromociones = FXMLLoader.load(getClass().getResource("FXMLAdminModPromociones.fxml"));
             Scene scenaAdmin = new Scene(vistaModPromociones);
             Stage scenarioAdmin = new Stage();
             scenarioAdmin.setScene(scenaAdmin);
             scenarioAdmin.initModality(Modality.APPLICATION_MODAL);
             scenarioAdmin.showAndWait();
         }catch(IOException ex){
-            
+            ex.printStackTrace();
         }
     }
+    
+    
 
     @FXML
     private void clickCerrarSesion(ActionEvent event) {
