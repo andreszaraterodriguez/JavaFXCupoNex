@@ -43,8 +43,6 @@ public class FXMLAdminModPromocionesController implements Initializable {
     @FXML
     private TableView<Promocion> tbPromociones;
     @FXML
-    private TextField tbBusquedaPromociones;
-    @FXML
     private TableColumn<?, ?> colNombre;
     @FXML
     private TableColumn<?, ?> colDescripcion;
@@ -60,6 +58,8 @@ public class FXMLAdminModPromocionesController implements Initializable {
     private TableColumn<?, ?> colCategoria;
     
      private ObservableList<Promocion> listaPromocion;
+    @FXML
+    private TextField wBuscar;
 
     /**
      * Initializes the controller class.
@@ -169,6 +169,10 @@ public class FXMLAdminModPromocionesController implements Initializable {
         } catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void clickBuscar(ActionEvent event) {
     }
     
 }

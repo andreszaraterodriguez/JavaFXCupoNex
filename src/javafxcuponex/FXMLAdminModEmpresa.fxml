@@ -28,12 +28,6 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="tfBuscarEmpresa" layoutX="26.0" layoutY="47.0" prefHeight="25.0" prefWidth="169.0" />
-      <Label layoutX="26.0" layoutY="27.0" prefHeight="17.0" prefWidth="215.0" text="Buscar Empresa">
-         <font>
-            <Font name="Bell MT" size="15.0" />
-         </font>
-      </Label>
       <Button layoutX="184.0" layoutY="340.0" mnemonicParsing="false" onAction="#clickEliminarEmpresa" text="Eliminar">
          <font>
             <Font name="Bell MT" size="14.0" />
@@ -57,5 +51,7 @@
             </LinearGradient>
          </textFill>
       </Label>
+      <Button layoutX="204.0" layoutY="47.0" mnemonicParsing="false" onAction="#clickBuscar" text="Buscar" />
+      <TextField fx:id="wBuscar" layoutX="26.0" layoutY="47.0" promptText="Buscar" />
    </children>
 </AnchorPane>

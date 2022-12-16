@@ -91,9 +91,6 @@ public class FXMLPrincipalController implements Initializable {
     
     
 
-    @FXML
-    private void clickCerrarSesion(ActionEvent event) {
-    }
    
     
     

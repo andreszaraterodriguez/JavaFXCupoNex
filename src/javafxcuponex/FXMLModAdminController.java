@@ -73,7 +73,7 @@ public class FXMLModAdminController implements Initializable {
         usuario.setDireccion(direccion);
         usuario.setTelefono(telefono);
         usuario.setFechaDeNacimiento(fechaN);
-        usuario.setAdministracion(Boolean.FALSE);
+        usuario.setAdministracion(Boolean.TRUE);
         verificarCreacionU(usuario);
         
     }

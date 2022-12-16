@@ -5,16 +5,21 @@
  */
 package javafxcuponex;
 
+import com.google.gson.Gson;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.Constants;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafxcuponex.modelo.ConsumirServiciosWeb;
+import javafxcuponex.pojos.Respuesta;
 import javafxcuponex.pojos.Usuario;
 import javafxcuponex.util.Constantes;
+import javafxcuponex.util.Utilidades;
 
 /**
  * FXML Controller class
@@ -47,6 +52,7 @@ public class FXMLEditModAdminController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
+        
     }    
 
 
@@ -61,7 +67,7 @@ public class FXMLEditModAdminController implements Initializable {
         String fechaN = tfFechaN.getText();
         String telefono = tfTelefono.getText();
         
-        Usuario usuario = new Usuario();
+        
         usuario.setNombre(nombre);
         usuario.setApellidoPaterno(apellidop);
         usuario.setApellidoMaterno(apellidoM);
@@ -71,7 +77,33 @@ public class FXMLEditModAdminController implements Initializable {
         usuario.setTelefono(telefono);
         usuario.setFechaDeNacimiento(fechaN);
         usuario.setAdministracion(Boolean.FALSE);
-        //verificarCreacionU(usuario);
+        verificarCreacionU(usuario);
+    }
+     private void verificarCreacionU(Usuario usuario){
+      try{
+          
+          String url = Constantes.URL_BASE + "usuario/actualizar/"+usuario.getId();
+          
+          Gson gson = new Gson();
+          String parametros = gson.toJson(usuario);
+          String resultado = ConsumirServiciosWeb.put(url, parametros);
+          System.out.println(resultado);
+           System.out.println(url);
+          Respuesta respuesta = gson.fromJson(resultado, Respuesta.class);
+          if(!respuesta.getError()){
+              Utilidades.mostrarAlertaSimple("Usuario actualizado...", respuesta.getMensaje(), Alert.AlertType.INFORMATION);
+             
+          }else{
+              Utilidades.mostrarAlertaSimple("No se puedo actualizar usuario...", respuesta.getMensaje(), Alert.AlertType.ERROR);
+          }
+       
+         System.out.println(resultado);
+          
+      }catch (Exception e){
+          
+          e.printStackTrace();
+          Utilidades.mostrarAlertaSimple("Error de conexion", e.getMessage(), Alert.AlertType.ERROR);
+      }
     }
      
     public void recibirInfo(Usuario usuario){

@@ -42,8 +42,6 @@ public class FXMLAdminModSucursalesController implements Initializable {
 
     @FXML
     private TableView<Sucursal> tbSucursales;
-    @FXML
-    private TextField tfBusquedaSucursal;
     
     
     @FXML
@@ -70,6 +68,8 @@ public class FXMLAdminModSucursalesController implements Initializable {
     private TableColumn<?, ?> colNombreEncargado;
     @FXML
     private TableColumn<?, ?> colNombreEmpresa;
+    @FXML
+    private TextField wBuscar;
     /**
      * Initializes the controller class.
      */
@@ -179,6 +179,10 @@ public class FXMLAdminModSucursalesController implements Initializable {
         } catch(Exception e){
             
         }
+    }
+
+    @FXML
+    private void clickBuscar(ActionEvent event) {
     }
     
 }

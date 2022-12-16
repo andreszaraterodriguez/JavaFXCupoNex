@@ -22,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -50,6 +51,8 @@ public class FXMLAdminModAdminController implements Initializable {
     private TableColumn<?, ?> colCorreo;
     
     private ObservableList<Usuario> listaAdministrador;
+    @FXML
+    private TextField wBuscar;
 
     /**
      * Initializes the controller class.
@@ -60,6 +63,8 @@ public class FXMLAdminModAdminController implements Initializable {
         configurarTabla();
         cargarInfoUsuarioWS();
     }    
+    
+    
     
     private void configurarTabla(){
         listaAdministrador = FXCollections.observableArrayList();
@@ -156,6 +161,23 @@ public class FXMLAdminModAdminController implements Initializable {
             escenarioFormulario.showAndWait();
         } catch(Exception e){
             
+        }
+    }
+
+    @FXML
+    private void clickBuscar(ActionEvent event) {
+       String busqueda = wBuscar.getText();
+             String urlWS = Constantes.URL_BASE+"usuario/leerTodos";
+        try{
+            String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
+            Gson gson = new Gson();
+            Type tipoListaAdministrador =  new TypeToken<List<Usuario>>(){}.getType(); 
+            List usuarioWS = gson.fromJson(jsonRespuesta, tipoListaAdministrador);           
+            listaAdministrador.addAll(usuarioWS);
+            tbUsuarios.setItems(listaAdministrador);
+            
+        }catch (Exception e){
+            Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
         }
     }
     

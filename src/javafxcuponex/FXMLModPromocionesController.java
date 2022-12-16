@@ -199,6 +199,9 @@ public class FXMLModPromocionesController implements Initializable {
         Stage stage = (Stage) tfNombreP.getScene().getWindow();
         
         File file =   filechooser.showOpenDialog(stage);
+          if(file == null){
+            return;
+        }
         foto = Files.readAllBytes(file.toPath());
       //  String prub = Base64.getEncoder().encodeToString(foto);
         

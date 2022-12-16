@@ -29,12 +29,6 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="tfBusquedaSucursal" layoutX="14.0" layoutY="58.0" />
-      <Label layoutX="14.0" layoutY="35.0" text="Buscar Sucursal">
-         <font>
-            <Font name="Bell MT" size="14.0" />
-         </font>
-      </Label>
       <Button layoutX="175.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar">
          <font>
             <Font name="Bell MT" size="14.0" />
@@ -58,5 +52,7 @@
             </LinearGradient>
          </textFill>
       </Label>
+      <TextField fx:id="wBuscar" layoutX="26.0" layoutY="54.0" promptText="Buscar" />
+      <Button layoutX="201.0" layoutY="54.0" mnemonicParsing="false" onAction="#clickBuscar" text="Buscar" />
    </children>
 </AnchorPane>

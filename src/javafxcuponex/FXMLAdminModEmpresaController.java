@@ -35,8 +35,6 @@ public class FXMLAdminModEmpresaController implements Initializable {
     @FXML
     private TableView<Empresa> tbEmpresas;
     @FXML
-    private TextField tfBuscarEmpresa;
-    @FXML
     private TableColumn<?, ?> colNombre;
     @FXML
     private TableColumn<?, ?> colNombreC;
@@ -57,6 +55,8 @@ public class FXMLAdminModEmpresaController implements Initializable {
     private TableColumn<?, ?> colRfc;
     
     private ObservableList<Empresa> listaEmpresas;
+    @FXML
+    private TextField wBuscar;
 
     /**
      * Initializes the controller class.
@@ -171,6 +171,10 @@ public class FXMLAdminModEmpresaController implements Initializable {
         } catch (Exception e){
             
         }
+    }
+
+    @FXML
+    private void clickBuscar(ActionEvent event) {
     }
     
 }

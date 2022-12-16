@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="690.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLEditModPromocionesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="690.0" style="-fx-background-color: #f89504;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLEditModPromocionesController">
    <children>
       <Label layoutX="24.0" layoutY="85.0" text="Nombre de promocion">
          <font>
@@ -27,7 +27,6 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfFechaPromocionI" layoutX="189.0" layoutY="143.0" />
       <Label layoutX="347.0" layoutY="147.0" text="Fecha termino de promocion">
          <font>
             <Font name="Bell MT" size="14.0" />
@@ -74,5 +73,6 @@
             </LinearGradient>
          </textFill>
       </Label>
+      <DatePicker fx:id="dpFechaIn" layoutX="174.0" layoutY="143.0" />
    </children>
 </AnchorPane>

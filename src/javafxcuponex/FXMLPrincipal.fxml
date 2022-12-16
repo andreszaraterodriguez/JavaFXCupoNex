@@ -30,11 +30,6 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="487.0" layoutY="359.0" mnemonicParsing="false" onAction="#clickCerrarSesion" text="Cerrar Sesion">
-         <font>
-            <Font name="Bell MT" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="189.0" layoutY="14.0" text="Adminitracion CUPONEX">
          <font>
             <Font name="Bell MT" size="20.0" />
