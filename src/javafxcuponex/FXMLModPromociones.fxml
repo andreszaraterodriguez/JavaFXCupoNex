@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="690.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModPromocionesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="690.0" style="-fx-background-color: #f89504;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModPromocionesController">
    <children>
       <Label layoutX="14.0" layoutY="75.0" text="Nombre de promocion">
          <font>
@@ -15,9 +15,9 @@
          </font>
       </Label>
       <TextField fx:id="tfNombreP" layoutX="152.0" layoutY="71.0" prefHeight="25.0" prefWidth="164.0" />
-      <Label layoutX="271.0" layoutY="14.0" text="Registro Promociones">
+      <Label layoutX="267.0" layoutY="14.0" text="Registro Promociones">
          <font>
-            <Font name="Bell MT" size="20.0" />
+            <Font name="Bell MT" size="21.0" />
          </font>
       </Label>
       <Label layoutX="328.0" layoutY="75.0" text="Descripcion">
@@ -31,12 +31,12 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="337.0" layoutY="137.0" text="Fecha termino de promocion">
+      <Label layoutX="345.0" layoutY="137.0" text="Fecha termino de promocion">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="308.0" layoutY="197.0" text="Tipo de promocion">
+      <Label layoutX="14.0" layoutY="197.0" text="Tipo de promocion">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
@@ -47,17 +47,17 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tfCostoP" layoutX="152.0" layoutY="249.0" />
-      <Label layoutX="317.0" layoutY="253.0" text="Categoria">
+      <TextField fx:id="tfCostoP" layoutX="143.0" layoutY="253.0" />
+      <Label layoutX="334.0" layoutY="197.0" text="Categoria">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
       <DatePicker fx:id="dpFechaIn" layoutX="164.0" layoutY="133.0" />
-      <DatePicker fx:id="dpFechaFin" layoutX="498.0" layoutY="133.0" />
-      <ComboBox fx:id="cbTipoP" layoutX="426.0" layoutY="193.0" prefWidth="150.0" />
-      <ComboBox fx:id="cbCategoria" layoutX="384.0" layoutY="249.0" prefWidth="150.0" />
-      <Button layoutX="122.0" layoutY="329.0" mnemonicParsing="false" onAction="#clickSeleccionarFoto" text="Seleccionar foto" />
-      <Label fx:id="lbFoto" layoutX="303.0" layoutY="333.0" text="No hay foto seleccionada" />
+      <DatePicker fx:id="dpFechaFin" layoutX="507.0" layoutY="133.0" />
+      <ComboBox fx:id="cbTipoP" layoutX="142.0" layoutY="193.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbCategoria" layoutX="406.0" layoutY="193.0" prefWidth="150.0" />
+      <Button layoutX="27.0" layoutY="354.0" mnemonicParsing="false" onAction="#clickSeleccionarFoto" text="Seleccionar foto" />
+      <Label fx:id="lbFoto" layoutX="150.0" layoutY="358.0" text="No hay foto seleccionada" />
    </children>
 </AnchorPane>

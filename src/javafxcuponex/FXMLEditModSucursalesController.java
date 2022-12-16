@@ -63,6 +63,8 @@ public class FXMLEditModSucursalesController implements Initializable {
         String colonia = tfColonia.getText();
         String ciudad = tfCiudad.getText();
         String telefono = tfTelefono.getText();
+        Double longitud = Double.parseDouble(tfLongitud.getText());
+        Double latitud = Double.parseDouble(tfLatitud.getText());
         
         Sucursal sucursal = new Sucursal();
         sucursal.setNombre(nombre);
@@ -71,6 +73,8 @@ public class FXMLEditModSucursalesController implements Initializable {
         sucursal.setColonia(colonia);
         sucursal.setCiudad(ciudad);
         sucursal.setTelefono(telefono);
+        sucursal.setLatitud(latitud);
+        sucursal.setLongitud(longitud);
     }
     
      public void recibirInfo(Sucursal sucursal){
@@ -81,6 +85,7 @@ public class FXMLEditModSucursalesController implements Initializable {
       tfColonia.setText(sucursal.getColonia());
       tfCiudad.setText(sucursal.getCiudad());
       tfTelefono.setText(sucursal.getTelefono());
+      
       
     }
     

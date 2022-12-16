@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="500.0" style="-fx-background-color: #009494;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLInicioController">
+<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="500.0" style="-fx-background-color: #f89504;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLInicioController">
    <children>
       <TextField fx:id="tfNumPersonal" layoutX="238.0" layoutY="99.0" />
       <PasswordField fx:id="pfPassword" layoutX="238.0" layoutY="157.0" />
@@ -23,7 +23,7 @@
          <font>
             <Font name="Bell MT" size="16.0" />
          </font></Label>
-      <Label layoutX="193.0" layoutY="14.0" prefHeight="26.0" prefWidth="115.0" text="CUPONEX">
+      <Label layoutX="200.0" layoutY="14.0" prefHeight="26.0" prefWidth="115.0" text="CUPONEX">
          <font>
             <Font name="Bell MT" size="22.0" />
          </font>

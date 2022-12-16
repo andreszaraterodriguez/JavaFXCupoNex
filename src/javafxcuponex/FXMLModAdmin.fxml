@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,13 +8,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="600.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModAdminController">
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="600.0" style="-fx-background-color: #f89504;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLModAdminController">
    <children>
       <Label layoutX="69.0" layoutY="81.0" text="Nombre :">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font></Label>
-      <Label layoutX="68.0" layoutY="158.0" text="Apellido Paterno :">
+      <Label layoutX="63.0" layoutY="158.0" text="Apellido Paterno :">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font></Label>
@@ -35,16 +36,30 @@
       <TextField fx:id="tfCorreo" layoutX="385.0" layoutY="154.0" />
       <PasswordField fx:id="tfPassword" layoutX="143.0" layoutY="229.0" prefHeight="25.0" prefWidth="127.0" />
       <Button layoutX="520.0" layoutY="360.0" mnemonicParsing="false" onAction="#clickGuardar" text="Guardar" />
-      <Button layoutX="32.0" layoutY="360.0" mnemonicParsing="false" onAction="#clickCancelar" text="Cancelar" />
-      <Label layoutX="229.0" layoutY="14.0" text="Registro Usuario">
+      <Label layoutX="331.0" layoutY="233.0" text="Telefono" />
+      <TextField fx:id="tfTelefono" layoutX="385.0" layoutY="229.0" />
+      <Label layoutX="63.0" layoutY="298.0" text="Direccion">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Label>
+      <Label layoutX="293.0" layoutY="298.0" text="Fecha Nacimiento">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Label>
+      <TextField fx:id="tfDireccion" layoutX="129.0" layoutY="294.0" />
+      <TextField fx:id="tfFechaN" layoutX="415.0" layoutY="294.0" promptText="AAAA-MM-DD" />
+      <Label layoutX="251.0" layoutY="14.0" text="Registro Usuario">
          <font>
             <Font name="Bell MT" size="20.0" />
-         </font></Label>
-      <Label layoutX="313.0" layoutY="233.0" text="Telefono" />
-      <TextField fx:id="tfTelefono" layoutX="385.0" layoutY="229.0" />
-      <Label layoutX="63.0" layoutY="298.0" text="Direccion" />
-      <Label layoutX="311.0" layoutY="298.0" text="Fecha Nacimiento" />
-      <TextField fx:id="tfDireccion" layoutX="132.0" layoutY="294.0" />
-      <TextField fx:id="tfFechaN" layoutX="415.0" layoutY="294.0" promptText="AAAA-MM-DD" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.43333333333333335" endY="1.0" startX="0.4047619047619047" startY="0.719047619047619">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>

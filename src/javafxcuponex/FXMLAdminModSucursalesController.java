@@ -62,13 +62,14 @@ public class FXMLAdminModSucursalesController implements Initializable {
     private TableColumn<?, ?> colLatitud;
     @FXML
     private TableColumn<?, ?> colLongitud;
-    @FXML
-    private TableColumn<?, ?> colNombreE;
-    @FXML
-    private TableColumn<?, ?> colEmpresa;
+
     
     
      private ObservableList<Sucursal> listaSucursal;
+    @FXML
+    private TableColumn<?, ?> colNombreEncargado;
+    @FXML
+    private TableColumn<?, ?> colNombreEmpresa;
     /**
      * Initializes the controller class.
      */
@@ -88,7 +89,8 @@ public class FXMLAdminModSucursalesController implements Initializable {
       colTelefono.setCellValueFactory(new PropertyValueFactory("telefono"));
       colLatitud.setCellValueFactory(new PropertyValueFactory ("latitud"));
       colLongitud.setCellValueFactory(new PropertyValueFactory("longitud"));
-      colNombreE.setCellValueFactory(new PropertyValueFactory ("enacrgado"));
+      colNombreEncargado.setCellValueFactory(new PropertyValueFactory ("nombreEncargado"));
+      colNombreEmpresa.setCellValueFactory(new PropertyValueFactory("nombreEmpresa"));
    
     }
     
@@ -96,6 +98,7 @@ public class FXMLAdminModSucursalesController implements Initializable {
        String urlWS = Constantes.URL_BASE+"sucursal/leerTodas";
         try{
             String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
+            System.out.println(jsonRespuesta);
             Gson gson = new Gson();
             Type tipoListaAdministrador =  new TypeToken<List<Sucursal>>(){}.getType(); 
             List sucursalWS = gson.fromJson(jsonRespuesta, tipoListaAdministrador);           
@@ -103,7 +106,8 @@ public class FXMLAdminModSucursalesController implements Initializable {
             tbSucursales.setItems(listaSucursal);
             
         }catch (Exception e){
-            Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
+            Utilidades.mostrarAlertaSimple("Error en conexion ", e.getMessage(), Alert.AlertType.ERROR);
+            e.printStackTrace();
         }
     }
 

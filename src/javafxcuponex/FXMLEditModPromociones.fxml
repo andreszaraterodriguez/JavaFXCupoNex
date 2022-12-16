@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,11 +10,6 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="690.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLEditModPromocionesController">
    <children>
-      <Label layoutX="272.0" layoutY="14.0" text="Editar Promocion">
-         <font>
-            <Font name="Bell MT" size="20.0" />
-         </font>
-      </Label>
       <Label layoutX="24.0" layoutY="85.0" text="Nombre de promocion">
          <font>
             <Font name="Bell MT" size="14.0" />
@@ -65,5 +61,18 @@
       <ComboBox fx:id="cbCategoria" layoutX="394.0" layoutY="259.0" prefWidth="150.0" />
       <ComboBox fx:id="cbTipoP" layoutX="436.0" layoutY="203.0" prefWidth="150.0" />
       <DatePicker fx:id="dpFechaFin" layoutX="511.0" layoutY="143.0" />
+      <Label layoutX="282.0" layoutY="14.0" text="Editar Promocion">
+         <font>
+            <Font name="Bell MT" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.43333333333333335" endY="1.0" startX="0.2666666666666666" startY="0.719047619047619">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>

@@ -49,9 +49,6 @@ public class FXMLEditModAdminController implements Initializable {
         
     }    
 
-    @FXML
-    private void clickCancelar(ActionEvent event) {
-    }
 
     @FXML
     private void clickGuardar(ActionEvent event) {

@@ -87,12 +87,13 @@ public class FXMLAdminModEmpresaController implements Initializable {
         try{
             String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
             Gson gson = new Gson();
-            Type tipoListaEmpresas =  new TypeToken<List<Empresa>>(){}.getType(); 
-            List empresaWS = gson.fromJson(jsonRespuesta, tipoListaEmpresas);
+            Type tipoListaEmpresa =  new TypeToken<List<Empresa>>(){}.getType(); 
+            List empresaWS = gson.fromJson(jsonRespuesta, tipoListaEmpresa);
             listaEmpresas.addAll(empresaWS);
             tbEmpresas.setItems(listaEmpresas);
         }catch (Exception e ){
-            Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
+            Utilidades.mostrarAlertaSimple("Error en conexion ", e.getMessage(), Alert.AlertType.ERROR);
+            e.printStackTrace();
         }
     }
     

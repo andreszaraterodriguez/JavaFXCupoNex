@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,32 +8,40 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="801.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModPromocionesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="801.0" style="-fx-background-color: #f89504;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModPromocionesController">
    <children>
-      <Label layoutX="356.0" layoutY="14.0" text="Promociones">
-         <font>
-            <Font name="Bell MT" size="17.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tbPromociones" layoutY="118.0" prefHeight="200.0" prefWidth="763.0">
+      <TableView fx:id="tbPromociones" layoutY="118.0" prefHeight="200.0" prefWidth="801.0">
         <columns>
-          <TableColumn fx:id="colNombre" prefWidth="92.0" text="Nombre Promocion" />
-          <TableColumn fx:id="colDescripcion" prefWidth="111.0" text="Descripcion" />
-            <TableColumn fx:id="colFechaI" prefWidth="85.0" text="Fecha inicio" />
-            <TableColumn fx:id="colFechaT" prefWidth="94.0" text="Fecha Termino" />
-            <TableColumn fx:id="colTipoP" prefWidth="122.0" text="Tipo Promocion" />
-            <TableColumn fx:id="colCosto" prefWidth="122.0" text="Costo / Descuento" />
-            <TableColumn fx:id="colCategoria" prefWidth="116.0" text="Categoria" />
+          <TableColumn fx:id="colNombre" prefWidth="114.0" text="Nombre Promocion" />
+          <TableColumn fx:id="colDescripcion" prefWidth="89.0" text="Descripcion" />
+            <TableColumn fx:id="colFechaI" prefWidth="90.0" text="Fecha inicio" />
+            <TableColumn fx:id="colFechaT" prefWidth="119.0" text="Fecha Termino" />
+            <TableColumn fx:id="colTipoP" prefWidth="128.0" text="Tipo Promocion" />
+            <TableColumn fx:id="colCosto" prefWidth="116.0" text="Costo / Descuento" />
+            <TableColumn fx:id="colCategoria" prefWidth="143.0" text="Categoria" />
         </columns>
       </TableView>
       <TextField fx:id="tbBusquedaPromociones" layoutX="14.0" layoutY="78.0" />
       <Label layoutX="14.0" layoutY="52.0" text="Buscar Promocion">
          <font>
-            <Font name="Bell MT" size="14.0" />
+            <Font name="Bell MT" size="15.0" />
          </font>
       </Label>
       <Button layoutX="29.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickEditado" text="Editar" />
       <Button layoutX="134.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar" />
       <Button layoutX="700.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickAgregar" text="Agregar" />
+      <Label layoutX="348.0" layoutY="27.0" text="Promociones">
+         <font>
+            <Font name="Bell MT" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.43333333333333335" endY="1.0" startX="0.4047619047619047" startY="0.719047619047619">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>

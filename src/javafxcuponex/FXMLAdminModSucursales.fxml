@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,13 +8,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="960.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModSucursalesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="960.0" style="-fx-background-color: #f89504;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLAdminModSucursalesController">
    <children>
-      <Label layoutX="437.0" layoutY="14.0" text="Sucursales">
-         <font>
-            <Font name="Bell MT" size="20.0" />
-         </font>
-      </Label>
       <TableView fx:id="tbSucursales" layoutY="100.0" prefHeight="200.0" prefWidth="960.0">
         <columns>
           <TableColumn fx:id="colNombre" prefWidth="109.0" text="Nombre" />
@@ -24,11 +20,11 @@
             <TableColumn fx:id="colTelefono" prefWidth="86.0" text="Telefono" />
             <TableColumn fx:id="colLatitud" prefWidth="88.0" text="Latitud" />
             <TableColumn fx:id="colLongitud" prefWidth="76.0" text="Longitud" />
-            <TableColumn fx:id="colNombreE" prefWidth="87.0" text="Nombre Encargado" />
-            <TableColumn fx:id="colEmpresa" prefWidth="86.0" text="Empresa" />
+            <TableColumn fx:id="colNombreEncargado" prefWidth="87.0" text="Nombre Encargado" />
+            <TableColumn fx:id="colNombreEmpresa" prefWidth="86.0" text="Empresa" />
         </columns>
       </TableView>
-      <Button layoutX="37.0" layoutY="332.0" mnemonicParsing="false" onAction="#clickEditar" text="Editar">
+      <Button layoutX="31.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickEditar" text="Editar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
@@ -39,15 +35,28 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="143.0" layoutY="333.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar">
+      <Button layoutX="175.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickEliminar" text="Eliminar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="649.0" layoutY="333.0" mnemonicParsing="false" onAction="#clickAgregar" text="Agregar">
+      <Button layoutX="851.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickAgregar" text="Agregar">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
+      <Label layoutX="437.0" layoutY="11.0" text="Sucursales">
+         <font>
+            <Font name="Bell MT" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.4238095238095238" endY="1.0" startX="0.48571428571428565" startY="0.719047619047619">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>

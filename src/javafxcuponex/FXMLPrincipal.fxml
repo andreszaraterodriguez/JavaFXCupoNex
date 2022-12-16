@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,13 +8,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #008080;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f89504;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcuponex.FXMLPrincipalController">
    <children>
-      <Label layoutX="203.0" layoutY="14.0" text="Administracion CUPONEX">
-         <font>
-            <Font name="Bell MT" size="19.0" />
-         </font>
-      </Label>
       <Button layoutX="224.0" layoutY="96.0" mnemonicParsing="false" onAction="#clickModAdministrador" text="Modulo Administrador">
          <font>
             <Font name="Bell MT" size="14.0" />
@@ -39,5 +35,18 @@
             <Font name="Bell MT" size="14.0" />
          </font>
       </Button>
+      <Label layoutX="189.0" layoutY="14.0" text="Adminitracion CUPONEX">
+         <font>
+            <Font name="Bell MT" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.43333333333333335" endY="1.0" startX="0.40952380952380946" startY="0.719047619047619">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>
