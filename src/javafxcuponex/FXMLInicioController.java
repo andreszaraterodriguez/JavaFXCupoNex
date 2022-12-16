@@ -68,7 +68,7 @@ public class FXMLInicioController implements Initializable {
           System.out.println(parametros);
           Respuesta respuesta = gson.fromJson(resultado, Respuesta.class);
           if(!respuesta.getError()){
-              Utilidades.mostrarAlertaSimple("Usuario verificado...", "Bienbenido "+ " al sistema", Alert.AlertType.INFORMATION);
+              Utilidades.mostrarAlertaSimple("Usuario verificado...", "Biembenido " + " al sistema", Alert.AlertType.INFORMATION);
               irPantallaPrincipal();
           }else{
               Utilidades.mostrarAlertaSimple("usuario incorrecto...", respuesta.getMensaje(), Alert.AlertType.ERROR);

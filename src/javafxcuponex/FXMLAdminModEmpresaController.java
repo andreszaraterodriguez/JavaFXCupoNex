@@ -175,6 +175,20 @@ public class FXMLAdminModEmpresaController implements Initializable {
 
     @FXML
     private void clickBuscar(ActionEvent event) {
+               String busqueda = wBuscar.getText();
+             String urlWS = Constantes.URL_BASE+"empresa/buscar/?busqueda="+busqueda;
+        try{
+            String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
+            Gson gson = new Gson();
+            Type tipoListaAdministrador =  new TypeToken<List<Empresa>>(){}.getType(); 
+            List usuarioWS = gson.fromJson(jsonRespuesta, tipoListaAdministrador);           
+            listaEmpresas.removeAll(listaEmpresas);
+            listaEmpresas.addAll(usuarioWS);
+            tbEmpresas.setItems(listaEmpresas);
+            
+        }catch (Exception e){
+            Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
+        }
     }
     
 }

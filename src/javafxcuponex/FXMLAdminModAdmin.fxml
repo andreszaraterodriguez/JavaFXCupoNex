@@ -47,7 +47,5 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextField fx:id="wBuscar" layoutX="14.0" layoutY="89.0" promptText="Buscar" />
-      <Button layoutX="190.0" layoutY="89.0" mnemonicParsing="false" onAction="#clickBuscar" text="Buscar" />
    </children>
 </AnchorPane>

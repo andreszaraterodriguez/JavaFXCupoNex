@@ -27,6 +27,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafxcuponex.modelo.ConsumirServiciosWeb;
+import javafxcuponex.pojos.Promocion;
 import javafxcuponex.pojos.Respuesta;
 import javafxcuponex.pojos.Sucursal;
 import javafxcuponex.pojos.Usuario;
@@ -183,6 +184,20 @@ public class FXMLAdminModSucursalesController implements Initializable {
 
     @FXML
     private void clickBuscar(ActionEvent event) {
+          String busqueda = wBuscar.getText();
+             String urlWS = Constantes.URL_BASE+"sucursal/buscar/?busqueda="+busqueda;
+        try{
+            String jsonRespuesta = ConsumirServiciosWeb.get(urlWS);
+            Gson gson = new Gson();
+            Type tipoListaAdministrador =  new TypeToken<List<Sucursal>>(){}.getType(); 
+            List sucursalWS = gson.fromJson(jsonRespuesta, tipoListaAdministrador);           
+            listaSucursal.removeAll(listaSucursal);
+            listaSucursal.addAll(sucursalWS);
+            tbSucursales.setItems(listaSucursal);
+            
+        }catch (Exception e){
+            Utilidades.mostrarAlertaSimple("Error en conexion ", "Error al consultar", Alert.AlertType.ERROR);
+        }
     }
     
 }
